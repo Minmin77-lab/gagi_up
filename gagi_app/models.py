@@ -1,6 +1,6 @@
 from django.db import models
 
-class Autor(models.Model):
+class Author(models.Model):
     name = models.CharField(verbose_name='Имя автора', max_length=20)
     surnabe = models.CharField('Фамилия', max_length=25)
     birthday = models.DateField('Дата рождения')
@@ -12,4 +12,4 @@ class PUblisher(models.Model):
 class Book(models.Model):
     title = models.CharField('Название', max_length=50)
     id_publisher = models.ForeignKey(PUblisher, on_delete=models.CASCADE)
-    id_autor = models.ManyToManyField(Autor)
+    id_autor = models.ManyToManyField(Author)
