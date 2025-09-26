@@ -6,6 +6,8 @@ class Author(models.Model):
     birthday = models.DateField('Дата рождения')
     bio = models.TextField('Биография')
     desc = models.CharField("Умер или нет", default="No")
+    def __str__(self):
+        return f"{self.surname}{self.name}"
 
     class Meta: 
         verbose_name = "Автор"
@@ -23,6 +25,7 @@ class Author(models.Model):
             
         ]
 
+
 class PUblisher(models.Model):
     name = models.CharField('НАзвание', unique=True)
 
@@ -31,5 +34,3 @@ class Book(models.Model):
     id_publisher = models.ForeignKey(PUblisher, on_delete=models.CASCADE)
     id_autor = models.ManyToManyField(Author)
 
-def __str__(self):
-    return f"{self.surname}{self.name}"
