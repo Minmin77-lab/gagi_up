@@ -7,7 +7,7 @@ class Users(models.Model):
     surname = models.CharField('Фамилия', max_length=25)
     birthday = models.DateField('Дата рождения')
     phone_number = models.CharField('Номер телефона', max_length=20)
-    email = models.CharField('e-mail', max_length=100, unique=True)
+    email = models.EmailField('e-mail', max_length=100, unique=True)
     hash_password = models.CharField('Пароль', max_length=255)
     created_at = models.DateTimeField('Дата и время регистрации')
     
@@ -30,7 +30,7 @@ class Staff(models.Model):
     
     name = models.CharField('Имя', max_length=50)
     surname = models.CharField('Фамилия', max_length=50)
-    position = models.CharField('Должность', max_length=50, choices=POSITION_CHOICES)  # Добавлен max_length
+    position = models.CharField('Должность', max_length=50, choices=POSITION_CHOICES)  
     phone_number = models.CharField('Номер телефона', max_length=20)
     passport = models.CharField('Паспорт', max_length=13, unique=True)
     
@@ -84,7 +84,7 @@ class Attractions(models.Model):
     min_age = models.IntegerField('Минимальный возраст', choices=MIN_AGE_CHOICES)
     activity_status = models.BooleanField('Статус активности', default=True)
     capacity = models.IntegerField('Вместимость (чел)', choices=CAPACITY_CHOICES)
-    duration_minutes = models.IntegerField('Продолжительность (мин)', choices=DURATION_CHOICES, default=5)  # Добавлен default
+    duration_minutes = models.IntegerField('Продолжительность (мин)', choices=DURATION_CHOICES, default=5)  
     staff = models.ForeignKey(Staff, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Ответственный сотрудник')
     
     def __str__(self):
@@ -125,7 +125,7 @@ class Tickets(models.Model):
     usage_time = models.DateTimeField('Время использования', null=True, blank=True)
     
     def save(self, *args, **kwargs):
-        # Автоматически рассчитываем valid_until на основе validity_duration из ticket_type
+        # Автоматически рассчитывает valid_until на основе validity_duration из ticket_type
         if not self.valid_until and self.ticket_type:
             self.valid_until = timezone.now() + timedelta(days=self.ticket_type.validity_duration)
         super().save(*args, **kwargs)
