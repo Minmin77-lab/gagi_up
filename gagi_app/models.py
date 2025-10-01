@@ -141,3 +141,32 @@ class Tickets(models.Model):
             models.Index(fields=["user", "ticket_type"]),
             models.Index(fields=["valid_until"]),
         ]
+
+class SituationStage(models.Model):
+    STATUS_CHOICES = [
+        ('pending', 'Ожидание'),
+        ('in_progress', 'В процессе'),
+        ('completed', 'Завершено'),
+        ('cancelled', 'Отменено'),
+        ('delayed', 'Задержано'),
+    ]
+    
+    attraction = models.ForeignKey(Attractions, on_delete=models.CASCADE, verbose_name='Аттракцион')
+    start_time = models.DateTimeField('Время начала')
+    end_time = models.DateTimeField('Время окончания', null=True, blank=True)
+    staff = models.ForeignKey(Staff, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Сотрудник')
+    ticket = models.ForeignKey(Tickets, on_delete=models.CASCADE, verbose_name='Билет')
+    actual_duration = models.IntegerField('Фактическая продолжительность (сек)', null=True, blank=True)
+    status = models.CharField('Статус', max_length=20, choices=STATUS_CHOICES, default='pending')
+    
+    def __str__(self):
+        return f"Сеанс #{self.id} - {self.attraction.name}"
+    
+    class Meta:
+        verbose_name = "Сеанс аттракциона"
+        verbose_name_plural = "Сеансы аттракционов"
+        ordering = ["-start_time"]
+        indexes = [
+            models.Index(fields=["attraction", "start_time"]),
+            models.Index(fields=["status"]),
+        ]
