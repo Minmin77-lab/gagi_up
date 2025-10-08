@@ -5,10 +5,10 @@ from datetime import timedelta
 class Users(models.Model):
     name = models.CharField(verbose_name='Имя', max_length=20)
     surname = models.CharField('Фамилия', max_length=25)
-    birthday = models.DateField('Дата рождения')
+    birth_date = models.DateField('Дата рождения')
     phone_number = models.CharField('Номер телефона', max_length=20)
     email = models.EmailField('e-mail', max_length=100, unique=True)
-    hash_password = models.CharField('Пароль', max_length=255)
+    password_hash = models.CharField('Пароль', max_length=255)
     created_at = models.DateTimeField('Дата и время регистрации')
     
     def __str__(self):
@@ -123,12 +123,6 @@ class Tickets(models.Model):
     purchase_date = models.DateTimeField('Дата покупки', auto_now_add=True)
     valid_until = models.DateTimeField('Действителен до')
     usage_time = models.DateTimeField('Время использования', null=True, blank=True)
-    
-    def save(self, *args, **kwargs):
-        # Автоматически рассчитывает valid_until на основе validity_duration из ticket_type
-        if not self.valid_until and self.ticket_type:
-            self.valid_until = timezone.now() + timedelta(days=self.ticket_type.validity_duration)
-        super().save(*args, **kwargs)
     
     def __str__(self):
         return f"Билет #{self.id} - {self.user.surname} {self.user.name}"
