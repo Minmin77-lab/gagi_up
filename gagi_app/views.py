@@ -1,3 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse 
+from .models import Users
 
-# Create your views here.
+def root(request):
+    return render(request, 'main.catalog.html')

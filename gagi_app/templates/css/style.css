@@ -1,0 +1,596 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Cormorant Infant", serif;
+}
+
+/* ХЕДЕР */
+header {
+  background-color: #cbe8ff;
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 150px;
+  gap: 30px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 80px;
+  width: 80px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.name {
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+}
+
+.menu-list {
+  display: flex;
+  gap: clamp(15px, 3vw, 35px);
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.menu-list li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 400;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+a:hover {
+  color: #2a9d8f;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* ФУТЕР */
+footer {
+  background-color: #cbe8ff;
+  padding: 50px 0;
+  border-top-left-radius: 150px;
+  border-top-right-radius: 150px;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  flex: 0 1 auto;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: 80px;
+  transition: transform 0.3s ease;
+}
+
+.logo-text {
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+  text-align: center;
+}
+
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 1;
+  min-width: 250px;
+}
+
+.contact-item h3 {
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  color: #000;
+}
+
+.contact-item p {
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  margin: 0;
+  color: #000;
+  line-height: 1.4;
+}
+
+.footer-menu {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-menu li {
+  margin-bottom: 15px;
+}
+
+.footer-menu a {
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  display: block;
+}
+
+.footer-menu a:hover {
+  transform: translateX(5px);
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  width: 100%;
+}
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 1024px) {
+  .header-inner {
+    gap: 20px;
+    min-height: 120px;
+  }
+
+  .logo {
+    height: 60px;
+    width: 60px;
+  }
+
+  .container {
+    max-width: 98%;
+  }
+
+  footer {
+    padding: 40px 0;
+  }
+
+  .footer-logo-img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    padding: 20px 0;
+    min-height: auto;
+  }
+
+  .header-left {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .name {
+    white-space: normal;
+    text-overflow: clip;
+  }
+
+  .menu-list {
+    justify-content: center;
+  }
+
+  main {
+    margin-top: 180px;
+    padding: 20px 0;
+  }
+
+  footer {
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    padding: 30px 0;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .footer-logo {
+    order: -1;
+    width: 100%;
+  }
+
+  .logo-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-left {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu-list {
+    gap: 10px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  footer {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 25px 0;
+  }
+
+  .footer-contacts,
+  .footer-menu {
+    min-width: 100%;
+  }
+
+  .footer-menu li {
+    margin-bottom: 10px;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-logo-img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .container {
+    max-width: 1900px;
+  }
+}
+
+/* СТИЛИ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ */
+.hero-section {
+  background: linear-gradient(135deg, #cbe8ff 0%, #a5d8ff 50%, #87ceeb 100%);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px 80px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-family: "Cormorant Infant", serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-family: "Cormorant Infant", serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 30px;
+}
+
+.hero-description {
+  font-family: "Cormorant Infant", serif;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  color: #2c3e50;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #2a9d8f;
+  color: white;
+  padding: 15px 40px;
+  font-family: "Cormorant Infant", serif;
+  font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(42, 157, 143, 0.3);
+}
+
+.cta-button:hover {
+  background-color: #21867a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(42, 157, 143, 0.4);
+}
+
+/* СЕКЦИЯ О ПАРКЕ */
+.about-section {
+  padding: 80px 20px;
+  background-color: white;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-content h2 {
+  font-family: "Cormorant Infant", serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  color: #2c3e50;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.about-content h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background-color: #2a9d8f;
+}
+
+.about-text {
+  font-family: "Cormorant Infant", serif;
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  line-height: 1.7;
+  color: #5a6c7d;
+  margin-bottom: 25px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature-item {
+  text-align: center;
+  padding: 25px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.feature-title {
+  font-family: "Cormorant Infant", serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.feature-description {
+  font-family: "Cormorant Infant", serif;
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+/* СЕКЦИЯ АТТРАКЦИОНОВ */
+.attractions-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 50px;
+  margin: 40px 0;
+}
+
+.section-title {
+  font-family: "Cormorant Infant", serif;
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 50px;
+}
+
+.attractions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.attraction-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.attraction-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  height: 200px;
+  background: linear-gradient(45deg, #cbe8ff, #a5d8ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.card-content {
+  padding: 25px;
+}
+
+.card-title {
+  font-family: "Cormorant Infant", serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.card-description {
+  font-family: "Cormorant Infant", serif;
+  font-size: 1rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 1024px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-section {
+    min-height: 70vh;
+    padding: 120px 20px 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding: 100px 20px 50px;
+  }
+
+  .attractions-section {
+    border-radius: 30px;
+    margin: 20px 0;
+  }
+
+  .attractions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-button {
+    padding: 12px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 80px 15px 40px;
+  }
+
+  .about-section,
+  .attractions-section {
+    padding: 50px 15px;
+  }
+
+  .feature-item {
+    padding: 20px;
+  }
+}
+
+/* ПЛАВНЫЙ СКРОЛЛ */
+html {
+  scroll-behavior: smooth;
+}

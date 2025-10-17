@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+ <body>
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-left">
+                    <a href="#" class="link-logo">
+                        <img src="./images/logo.svg" alt="Логотип парка Мир Мечты" class="logo">
+                    </a>
+                    <h1 class="name">Парк аттракционов Мир Мечты</h1>
+                </div>
+                
+                <nav class="menu">
+                    <ul class="menu-list">
+                        <li><a href="#">О парке</a></li>
+                        <li><a href="#">Чем заняться</a></li>
+                        <li><a href="#">Полезное</a></li>
+                        <li><a href="#">Купить билет</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {%block main%}
+        {%endblock%}
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-container">
+                        <img src="./images/logo.svg" alt="Логотип парка Мир Мечты" class="footer-logo-img">
+                        <p class="logo-text">Мир мечты</p>
+                    </div>
+                </div>
+                
+                <div class="footer-contacts">
+                    <div class="contact-item">
+                        <h3>Наш адрес</h3>
+                        <p>г. Саратов, проспект Андропова, д.1</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Телефон</h3>
+                        <p>+7 9124106667</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Мы в социальных сетях</h3>
+                        <p>@mirmechty_park</p>
+                    </div>
+                </div>
+
+                <div class="footer-menu">
+                    <ul>
+                        <li><a href="#">О парке</a></li>
+                        <li><a href="#">Награды и достижения</a></li>
+                        <li><a href="#">Билетная политика</a></li>
+                        <li><a href="#">Фотоотчет</a></li>
+                        <li><a href="#">Правила посещения</a></li>
+                        <li><a href="#">Кафе</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-menu">
+                    <ul>
+                        <li><a href="#">Проект «Русские узоры»</a></li>
+                        <li><a href="#">Спорт и отдых</a></li>
+                        <li><a href="#">Армия</a></li>
+                        <li><a href="#">Фотоотчеты</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                Городской парк г. Саратов © 2025 Все права защищены
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

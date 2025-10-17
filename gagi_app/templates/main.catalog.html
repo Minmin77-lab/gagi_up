@@ -1,0 +1,397 @@
+<!-- {% extends "base.html" %}
+
+{%block main%}
+
+{%endblock%} -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <title>Парк аттракционов Мир Мечты</title>
+    <style>
+        /* СТИЛИ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ */
+        .hero-section {
+            background: linear-gradient(135deg, #CBE8FF 0%, #A5D8FF 50%, #87CEEB 100%);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 80px;
+            border-bottom-left-radius: 100px;
+            border-bottom-right-radius: 100px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-family: "Cormorant Infant", serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-family: "Cormorant Infant", serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 30px;
+        }
+
+        .hero-description {
+            font-family: "Cormorant Infant", serif;
+            font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+            color: #2c3e50;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #2a9d8f;
+            color: white;
+            padding: 15px 40px;
+            font-family: "Cormorant Infant", serif;
+            font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(42, 157, 143, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: #21867a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(42, 157, 143, 0.4);
+        }
+
+        /* СЕКЦИЯ О ПАРКЕ */
+        .about-section {
+            padding: 80px 20px;
+            background-color: white;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-family: "Cormorant Infant", serif;
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            color: #2c3e50;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .about-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: #2a9d8f;
+        }
+
+        .about-text {
+            font-family: "Cormorant Infant", serif;
+            font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+            line-height: 1.7;
+            color: #5a6c7d;
+            margin-bottom: 25px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 25px;
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-family: "Cormorant Infant", serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .feature-description {
+            font-family: "Cormorant Infant", serif;
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+
+        /* СЕКЦИЯ АТТРАКЦИОНОВ */
+        .attractions-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 50px;
+            margin: 40px 0;
+        }
+
+        .section-title {
+            font-family: "Cormorant Infant", serif;
+            font-size: clamp(2.2rem, 3.5vw, 3rem);
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 50px;
+        }
+
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .attraction-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .attraction-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .card-image {
+            height: 200px;
+            background: linear-gradient(45deg, #CBE8FF, #A5D8FF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-title {
+            font-family: "Cormorant Infant", serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .card-description {
+            font-family: "Cormorant Infant", serif;
+            font-size: 1rem;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        /* АДАПТИВНОСТЬ */
+        @media (max-width: 1024px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-section {
+                min-height: 70vh;
+                padding: 120px 20px 60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                border-bottom-left-radius: 50px;
+                border-bottom-right-radius: 50px;
+                padding: 100px 20px 50px;
+            }
+
+            .attractions-section {
+                border-radius: 30px;
+                margin: 20px 0;
+            }
+
+            .attractions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 80px 15px 40px;
+            }
+
+            .about-section,
+            .attractions-section {
+                padding: 50px 15px;
+            }
+
+            .feature-item {
+                padding: 20px;
+            }
+        }
+
+        /* ПЛАВНЫЙ СКРОЛЛ */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- ВСТАВЬТЕ СЮДА ВАШ ХЕДЕР ИЗ ШАБЛОНА DJANGO -->
+    <!-- {% include 'header.html' %} -->
+
+    <main>
+        <!-- ГЕРОЙ СЕКЦИЯ -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Парк аттракционов</h1>
+                <h2 class="hero-subtitle">Мир Мечты</h2>
+                <p class="hero-description">
+                    Погрузитесь в мир волшебства и приключений, насладитесь яркими шоу и представлениями. 
+                    Отдохните в уютных кафе и ресторанах. Создайте незабываемые воспоминания вместе с нами!
+                </p>
+                <a href="#tickets" class="cta-button">Купить билет</a>
+            </div>
+        </section>
+
+        <!-- СЕКЦИЯ О ПАРКЕ -->
+        <section class="about-section">
+            <div class="about-container">
+                <div class="about-content">
+                    <h2>О парке</h2>
+                    <p class="about-text">
+                        В парке представлено более 50 развлечений, многие из которых не имеют аналогов 
+                        в России и Европе. От экстремальных аттракционов до уникальных шоу-программ 
+                        вас ждет полное погружение в мир волшебства!
+                    </p>
+                    <p class="about-text">
+                        Мы соблюдаем все международные нормы безопасности, поэтому у некоторых развлечений 
+                        есть ростовые ограничения. Воспользуйтесь фильтром и подберите развлечения, 
+                        которые подходят именно вам.
+                    </p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">🎪</div>
+                            <h3 class="feature-title">50+ аттракционов</h3>
+                            <p class="feature-description">Уникальные развлечения для всех возрастов</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">⭐</div>
+                            <h3 class="feature-title">Международные стандарты</h3>
+                            <p class="feature-description">Полное соответствие нормам безопасности</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🍕</div>
+                            <h3 class="feature-title">Уютные кафе</h3>
+                            <p class="feature-description">Вкусная еда и напитки для всей семьи</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🎭</div>
+                            <h3 class="feature-title">Шоу-программы</h3>
+                            <p class="feature-description">Яркие представления каждый день</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <!-- Здесь можно добавить изображение или графику -->
+                    <div style="background: linear-gradient(45deg, #CBE8FF, #A5D8FF); height: 500px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                        🎡
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЕКЦИЯ АТТРАКЦИОНОВ -->
+        <section class="attractions-section">
+            <h2 class="section-title">Популярные аттракционы</h2>
+            <div class="attractions-grid">
+                <div class="attraction-card">
+                    <div class="card-image">🎢</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Американские горки</h3>
+                        <p class="card-description">Самые экстремальные горки в России с уникальными петлями и скоростью до 100 км/ч</p>
+                    </div>
+                </div>
+                <div class="attraction-card">
+                    <div class="card-image">🎠</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Волшебная карусель</h3>
+                        <p class="card-description">Классическая карусель с ручной росписью для детей и взрослых</p>
+                    </div>
+                </div>
+                <div class="attraction-card">
+                    <div class="card-image">👻</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Дом с привидениями</h3>
+                        <p class="card-description">Захватывающее путешествие в мир мистики и загадок</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЕКЦИЯ ДЛЯ КНОПКИ КУПИТЬ БИЛЕТ -->
+        <section id="tickets" style="padding: 60px 20px; text-align: center; background-color: #f8f9fa;">
+            <div class="container">
+                <h2 style="font-family: 'Cormorant Infant', serif; font-size: 2.5rem; margin-bottom: 30px; color: #2c3e50;">
+                    Готовы к приключениям?
+                </h2>
+                <p style="font-family: 'Cormorant Infant', serif; font-size: 1.3rem; margin-bottom: 40px; color: #5a6c7d;">
+                    Приобретите билеты онлайн и получите скидку 10% на первый визит
+                </p>
+                <a href="#" class="cta-button">Купить билет онлайн</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ВСТАВЬТЕ СЮДА ВАШ ФУТЕР ИЗ ШАБЛОНА DJANGO -->
+    <!-- {% include 'footer.html' %} -->
+</body>
+</html>
