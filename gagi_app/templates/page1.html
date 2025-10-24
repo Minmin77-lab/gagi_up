@@ -1,0 +1,246 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet" >
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+
+<body class="body">
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-left">
+                    <a href="#" class="link-logo">
+                        <img src="{% static 'images/logo.svg' %}" alt="Логотип парка Мир Мечты" class="logo" />
+                    </a>
+                    <h3 class="name">Парк аттракционов Мир Мечты</h3>
+                </div>
+                <nav class="menu">
+                    <ul class="menu-list">
+                        <li><a class="menu-link" href="#">Чем заняться</a></li>
+                        <li><a class="menu-link" href="#">Полезное</a></li>
+                        <li><a class="menu-link" href="#">О парке</a></li>
+                    </ul>
+                </nav>
+                <div class="buy">
+                    <img src="images/Group (3).svg" alt="sss" class="img-buy">
+                    <div class="text-buttn">
+                        <a href="#" class="buttn">Купить <br>билет</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="fonts">
+                <div class="name-park">
+                    <h2 class="title-name">Парк аттракционов </h2>
+                    <h1 class="title-park">Мир Мечты</h1>
+                    <p class="text-fonts">Погрузитесь в мир волшебства и приключений, насладитесь <br>яркими шоу и
+                        представлениями,
+                        отдохните в уютных кафе и <br>ресторанах. Создайте незабываемые воспоминания вместе с <br>нами!
+                    </p>
+                </div>
+                <div class="btn">
+                    <a href="#" class="btn-link">Купить билет</a>
+                </div>
+
+            </section>
+
+            <section class="about">
+                <div class="vata">
+                    <img src="{% static 'images/vata.png' %}" alt="vata" class="vata-puz">
+                </div>
+                <div class="about-us">
+                    <h2 class="about__title">О парке</h2>
+                    <p class="about-text">В парке представлено более 50 развлечений, многие из которых не имеют
+                        <br>аналогов
+                        в России и Европе. <br>
+                        От экстремальных аттракционов до уникальных шоу-программ: вас ждет <br>полное погружение в мир
+                        волшебства! <br>
+                        Мы соблюдаем все международные нормы безопасности, поэтому у <br>некоторых развлечений есть
+                        ростовые
+                        ограничения. <br>Воспользуйтесь фильтром и подберите развлечения, которые подходят <br>именно
+                        вам.
+                    </p>
+                </div>
+            </section>
+            <section class="work">
+                <div class="work-park">
+                    <h3 class="work-title">Чем заняться в парке</h3>
+                    <p class="text-work">Для любителей острых ощущений: Испытайте себя на экстремальных аттракционах,
+                        <br>от
+                        головокружительных горок до свободного падения. <br>
+                        Для семейного отдыха: Прокатитесь на веселых каруселях, посетите увлекательные <br>шоу и
+                        представления, загляните в сказочный городок. <br>
+                        Для маленьких гостей: Специально для детей подготовлены игровые площадки, <br>батуты и
+                        аттракционы.
+                    </p>
+                </div>
+                <div class="list-site">
+                    <div class="site-item">
+                        <div class="titlee">
+                            <h4 class="site-title">
+                                Малая <br>площадка
+                            </h4>
+                        </div>
+                        <a href="http://127.0.0.1:8000/small" class="site-link">Смотреть</a>
+                        <div class="kar">
+                            <img src="{% static 'images/karuzel.png' %}" alt="kartinka" class="site-img">
+                        </div>
+                    </div>
+                    <div class="site-item-blue">
+                        <div class="titlee">
+                            <h4 class="site-title">
+                                Большая <br>площадка
+                            </h4>
+                        </div>
+                        <a href="http://127.0.0.1:8000/big" class="site-link-blue">Смотреть</a>
+                        <div class="kar">
+                            <img src="{% static 'images/karuzel.png' %}" alt="kartinka" class="site-img">
+                        </div>
+                    </div>
+                    <div class="site-item-pink">
+                        <div class="titlee">
+                            <h4 class="site-title">
+                                Афиша <br>мероприятий
+                            </h4>
+                        </div>
+                        <a href="#" class="site-link-pink">Смотреть</a>
+                        <div class="kar">
+                            <img src="{% static 'images/velosiped.png' %}" alt="kartinka" class="site-img">
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="rules">Правила посещения</a>
+            </section>
+            <section class="events">
+                <div class="event-park">
+                    <h3 class="events-title">События в нашем парке</h3>
+                    <p class="text-events">Мы регулярно проводим увлекательные мероприятия и шоу для гостей всех <br>
+                        возрастов. Следите за нашими новостями и анонсами, чтобы не пропустить яркие <br>фестивали,
+                        тематические вечеринки, захватывающие представления и <br>специальные акции. Создайте
+                        незабываемые
+                        воспоминания вместе с нами!
+                    </p>
+                </div>
+                <div class="type-list">
+                    <div class="type-item">
+                        <div class="type-img">
+                            <img src="{% static 'images/gorki.png' %}" alt="#" class="typeimages">
+                        </div>
+                        <h4 class="type-title">Бум на американские горки</h4>
+                        <div class="time-price">
+                            <p class="time-text">сегодня до 23:00</p>
+                            <p class="price-text">Бесплатно</p>
+                        </div>
+                    </div>
+                    <div class="type-item">
+                        <div class="type-img">
+                            <img src="{% static 'images/kacheli.png' %}" alt="#" class="typeimages">
+                        </div>
+                        <h4 class="type-title">Бум на американские горки</h4>
+                        <div class="time-price">
+                            <p class="time-text">сегодня до 23:00</p>
+                            <p class="price-text">Бесплатно</p>
+                        </div>
+                    </div>
+                    <div class="type-item">
+                        <div class="type-img">
+                            <img src="{% static 'images/detskie-kacheli.png' %}" alt="#" class="typeimages">
+                        </div>
+                        <h4 class="type-title">Бум на американские горки</h4>
+                        <div class="time-price">
+                            <p class="time-text">сегодня до 23:00</p>
+                            <p class="price-text">Бесплатно</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="gallery">
+                <div class="gallery-list">
+                    <img src="{% static 'images/kartinkii.png' %}" alt="kartinkii" class="gallery-item">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Галерея</h3>
+                        <p class="gallery-text">
+                            Банальные, но неопровержимые выводы, а также реплицированные с <br>зарубежных источников,
+                            современные исследования, инициированные <br>исключительно синтетически, своевременно
+                            верифицированы. Равным <br>образом, социально-экономическое развитие говорит о возможностях
+                            <br>
+                            распределения внутренних резервов и ресурсов.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">
+                    <div class="logo-container">
+                        <img src="{% static 'images/Observation Wheel - iconSvg.co.svg' %}" alt="Логотип парка Мир Мечты"
+                            class="footer-logo-img" />
+                        <p class="logo-text">Мир мечты</p>
+                    </div>
+                </div>
+
+                <div class="footer-contacts">
+                    <div class="contact-item">
+                        <h3>Наш адрес</h3>
+                        <p>г. Саратов, проспект Андропова, д.1</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Телефон</h3>
+                        <p>+7 9124106667</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Мы в социальных сетях</h3>
+                        <p>@mirmechty_park</p>
+                    </div>
+                </div>
+
+                <div class="footer-menu-one">
+                    <ul>
+                        <li class="footer-item"><a class="footer-link" href="#">О парке</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#">Награды и достижения</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#">Билетная политика</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#">Фотоотчет</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#">Правила посещения</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#">Кафе</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-menu">
+                    <ul>
+                        <li class="footer-item"><a class="footer-link" href="#">Проект «Русские узоры»</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#">Спорт и отдых</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#">Армия</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#">Фотоотчеты</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#">Контакты</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#">Вакансии</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                Городской парк г. Саратов © 2025 Все права защищены
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
