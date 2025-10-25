@@ -870,6 +870,10 @@ h5 {
     background-repeat: no-repeat;
 }
 
+.pinkii{
+    color: #BE43C5;
+}
+
 .buy-billet{
     display: flex;
     justify-content: space-between;

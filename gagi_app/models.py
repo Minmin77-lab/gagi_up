@@ -77,11 +77,15 @@ class Attractions(models.Model):
         (8, '8 минут'),
         (15, '15 минут')      
     ]
-
+    AREA_TYPE = [
+        ('малая площадка', 'малая площадка'),
+        ('большая площадка', 'большая площадка'),
+    ]
     name = models.CharField('Название', max_length=100, unique=True)
     min_height = models.IntegerField('Минимальный рост (см)', choices=MIN_HEIGHT_CHOICES)
     max_height = models.IntegerField('Максимальный рост (см)', choices=MAX_HEIGHT_CHOICES)
     min_age = models.IntegerField('Минимальный возраст', choices=MIN_AGE_CHOICES)
+    area = models.CharField('площадка', choices=AREA_TYPE)
     activity_status = models.BooleanField('Статус активности', default=True)
     capacity = models.IntegerField('Вместимость (чел)', choices=CAPACITY_CHOICES)
     duration_minutes = models.IntegerField('Продолжительность (мин)', choices=DURATION_CHOICES, default=5)  
