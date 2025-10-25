@@ -10,5 +10,5 @@ def page2(request):
 def page3(request):
     return render(request, 'page3.html')
 
-def css_template(request):
-    return render(request, 'css/style.css', content_type='text/css')
+def page4(request):
+    return render(request, 'page4.html')

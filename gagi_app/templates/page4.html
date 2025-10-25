@@ -1,0 +1,64 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{%block main%}
+        <div class="container">
+            <section class="attebtion-playground">
+                <div class="small-info">
+                    <ul class="small-list">
+                        <li class="small-item"><a href="#" class="small1-link">Главная</a></li>
+                        <li class="small-item"><a href="#" class="small2-link">/Купить билет</a></li>
+                    </ul>
+                    <h2 class="small-title">Купить билет</h2>
+                </div>
+            </section>
+            <section class="attention">
+                <div class="body-attention">
+                    <div class="title-attention">
+                        <h4 class="attention-title">Обратите внимание</h4>
+                    </div>
+                    <div class="action">
+                        <div class="action-list">
+                            <p class="action-text">Билет действителен только в выбранную дату</p>
+                            <p class="action-text">Время работы парка развлечений: с 10:00 до 22:00</p>
+                        </div>
+                        <a href="#" class="action-btn">Правила посещения парка</a>
+                    </div>
+                </div>
+            </section>
+            <section class="buy-billet">
+                <div class="buy-billet-item">
+                    <img src="{% static 'images/snow.png' %}" alt="#" class="buy-billet-images">
+                    <div class="head-buy-billet">
+                        <h5 class="title-buy-billet">Более 15 головокружительных <br>аттракционов и 2 шоу</h5>
+                        <p class="buy-billet-price">от 2 500 ₽</p>
+                    </div>
+                    <div class="footer-billet">
+                        <p class="billet-time">с 10.00 до 20.00</p>
+                        <div class="button-buy-billet">
+                            <a href="" class="buy-btn">
+                                Купить билет
+                                <div class="images-buy-billet"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="buy-billet-item pink">
+                    <img src="{% static 'images/kino.png' %}" alt="#" class="buy-billet-images">
+                    <div class="head-buy-billet">
+                        <h5 class="title-buy-billet">Более 30 головокружительных <br>аттракционов и 4 шоу</h5>
+                        <p class="buy-billet-price">от 2 500 ₽</p>
+                    </div>
+                    <div class="footer-billet">
+                        <p class="billet-time">с 12.00 до 22.00</p>
+                        <div class="button-buy-billet pink-sss">
+                            <a href="" class="buy-btn pink-s">
+                                Купить билет
+                                <div class="images-buy-billet pink-ss"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+{%endblock%}
