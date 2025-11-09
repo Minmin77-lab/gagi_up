@@ -40,7 +40,9 @@
             {% for attraction in attraction_examples %}
             <div class="atr-card">
                 {% if attraction.main_image %}
-                <img src="{{ attraction.main_image.url }}" alt="изображения аттракциона" class="preview-atr">
+                <img src="{{ attraction.main_image.url }}" alt="{{ attraction.name }}" class="preview-atr">
+                {% else %}
+                    <img src="{% static 'images/big.png' %}" alt="{{ attraction.name }}" class="preview-atr">
                 {% endif %}
                 <div class="art-text-{{ forloop.counter }}">
                     <p class="art-card-text">{{ attraction.description|default:"Незабываемое приключение" }}</p>
