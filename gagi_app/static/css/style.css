@@ -447,7 +447,7 @@ footer {
 
 .right-left {
     margin-right: 30px;
-    width: 200px;
+
 }
 
 .attraction-title {
@@ -592,100 +592,76 @@ footer {
     margin-bottom: 100px;
 }
 
-.more-title {
-    margin-bottom: 50px;
-    font-size: 32px;
+.preview-atr {
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    width: 400px;
 }
 
-.more-item-1 {
-    background-image: url("../images/gribok.png");
-    background-repeat: no-repeat;
-    width: 465px;
-    height: 325px;
+.atr-card {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
 }
 
-.more-atraction {
-    margin-bottom: 70px;
+.art-card-text {
+    font-weight: 700;
 }
 
-.more-atraction-text {
-    margin-top: 220px;
-    text-align: center;
+.title-art-card {
+    font-size: 30px;
+    border-top: 2px solid #000;
 }
 
-.more-text {
-    background-color: #fff;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    height: 43px;
-    width: 465px;
-    padding-top: 10px;
-    font-size: 18px;
-}
-
-.more-title-atracrion {
+.art-text-1 {
     background-color: #FEB6B6;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    height: 30px;
-    width: 465px;
-    display: block;
-    align-items: center;
-    padding-top: 10px;
+    width: 400px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+.art-text-2 {
+    background-color: #F7C5F8;
+    width: 400px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+.art-text-3 {
+    background-color: #D5E5F2;
+    width: 400px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+.title-art-card {
     margin: 0;
-    font-size: 23px;
 }
 
 
-.more-img {
-    position: relative;
-    left: 410px;
-    top: 297px;
-}
-
-.more-item-2 {
-    background-image: url("../images/snow.png");
-    background-repeat: no-repeat;
-    width: 465px;
-    height: 325px;
-}
-
-.more-title-atracrion-2 {
-    background-color: #B0D2F0;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    height: 30px;
-    width: 465px;
-    display: block;
-    align-items: center;
-    padding-top: 10px;
-    margin: 0;
-    font-size: 23px;
-}
-
-.more-item-3 {
-    background-image: url("../images/zamok.png");
-    background-repeat: no-repeat;
-    width: 465px;
-    height: 325px;
-}
-
-.more-title-atracrion-3 {
-    background-color: #F2BDF3;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    height: 30px;
-    width: 465px;
-    display: block;
-    align-items: center;
-    padding-top: 10px;
-    margin: 0;
-    font-size: 23px;
-}
 
 .atr {
-    display: flex;
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 401px);
+    grid-template-rows: repeat(auto-fill, 380px);
     justify-content: space-evenly;
+    
 }
 
 .head-more {
@@ -713,26 +689,11 @@ footer {
     color: #fff;
 }
 
-.more-item-1_2 {
-    background-image: url("../images/coles.png");
-    background-repeat: no-repeat;
-    width: 465px;
-    height: 325px;
-}
 
-.more-item-2_2 {
-    background-image: url("../images/help.png");
-    background-repeat: no-repeat;
-    width: 465px;
-    height: 325px;
-}
 
-.more-item-3_2 {
-    background-image: url("../images/kino.png");
-    background-repeat: no-repeat;
-    width: 465px;
-    height: 325px;
-}
+
+
+
 
 .body-attention {
     background-color: #EBECF4;

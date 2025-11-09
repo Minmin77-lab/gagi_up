@@ -38,19 +38,18 @@
         </div>
         <div class="atr">
             {% for attraction in attraction_examples %}
-            <div class="more-item-{{ forloop.counter }}">
+            <div class="atr-card">
                 {% if attraction.main_image %}
-                    <img src="{{ attraction.main_image.url }}" alt="{{ attraction.name }}" class="more-img">
-                {% else %}
-                    <img src="{% static 'images/arrou.svg' %}" alt="{{ attraction.name }}" class="more-img">
+                <img src="{{ attraction.main_image.url }}" alt="изображения аттракциона" class="preview-atr">
                 {% endif %}
-                <div class="more-atraction-text">
-                    <p class="more-text">{{ attraction.description|default:"Незабываемое приключение" }}</p>
-                    <h4 class="more-title-atracrion-{{ forloop.counter }}">{{ attraction.name }}</h4>
+                <div class="art-text-{{ forloop.counter }}">
+                    <p class="art-card-text">{{ attraction.description|default:"Незабываемое приключение" }}</p>
+                    <h4 class="title-art-card">{{ attraction.name }}</h4>
                 </div>
             </div>
             {% endfor %}
         </div>
+        
         <div class="all-atraction">
             <a href="#" class="all">Все аттракционы</a>
         </div>
