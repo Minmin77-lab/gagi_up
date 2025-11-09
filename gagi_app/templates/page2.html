@@ -2,148 +2,93 @@
 {% load static %}
 
 {% block main %}
-        <div class="container">
-            <section class="small-playground">
-                <div class="small-info">
-                    <ul class="small-list">
-                        <li class="small-item"><a href="#" class="small1-link">Главная</a></li>
-                        <li class="small-item"><a href="#" class="small2-link">/Чем заняться</a></li>
-                        <li class="small-item"><a href="#" class="small3-link">/Малая площадка</a></li>
-                    </ul>
-                    <h2 class="small-title">Малая площадка</h2>
-                </div>
-                <div class="info">
-                    <img src="{% static 'images/small.png' %}" alt="" class="small-img">
-                    <p class="small-text">В парке представлено более 30 развлечений, многие из которых не имеют аналогов
-                        в России и Европе. <br>
-                        От экстремальных аттракционов до уникальных шоу-программ: вас ждет полное погружение в мир
-                        волшебства! <br>
-                        Мы соблюдаем все международные нормы безопасности, поэтому у некоторых развлечений есть ростовые
-                        ограничения.
-                    </p>
-                </div>
-            </section>
-            <section class="more-atraction">
-                <div class="head-more">
-                    <h2 class="more-title">Более 15 аттракционов</h2>
-                    <div class="right-left">
-                        <a href="" class="attraction-link-s">
-                            <img src="{% static 'images/right.png' %}" alt="" class="atraction-link-img">
-                        </a>
-                        <a href="" class="attraction-link">
-                            <img src="{% static 'images/left.png' %}" alt="" class="atraction-link-img">
-                        </a>
-                    </div>
-                </div>
-                <div class="atr">
-                    <div class="more-item-1">
-                        <img src="{% static 'images/arrou.svg' %}" alt="" class="more-img">
-                        <div class="more-atraction-text">
-                            <p class="more-text">Незабываемый полёт под музыку Смурфов</p>
-                            <h4 class="more-title-atracrion-2">Поющая карусель</h4>
-                        </div>
-                    </div>
-                    <div class="more-item-2">
-                        <img src="{% static 'images/arrou.svg' %}" alt="" class="more-img">
-                        <div class="more-atraction-text">
-                            <p class="more-text">Красные сани Снежной Королевы унесут <br>вас в снежную сказку</p>
-                            <h4 class="more-title-atracrion">Снежные виражи</h4>
-                        </div>
-                    </div>
-                    <div class="more-item-3">
-                        <img src="{% static 'images/arrou.svg' %}" alt="" class="more-img">
-                        <div class="more-atraction-text">
-                            <p class="more-text">Знакомство с самыми дружелюбными <br>монстрами парка</p>
-                            <h4 class="more-title-atracrion-3">Отель Трансильвания</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="all-atraction">
-                    <a href="#" class="all">Все аттракционы</a>
-                </div>
-            </section>
-            <section class="attraction">
-                <div class="head-attraction">
-                    <h2 class="attraction-title">Купить билет</h2>
-                    <div class="right-left">
-                        <a href="" class="attraction-link-s">
-                            <img src="{% static 'images/right.png' %}" alt="" class="atraction-link-img">
-                        </a>
-                        <a href="" class="attraction-link">
-                            <img src="{% static 'images/left.png' %}" alt="" class="atraction-link-img">
-                        </a>
-                    </div>
-                </div>
-                <div class="type-tickets">
-                    <div class="type">
-                        <div class="type-head">
-                            <h3 class="type-title">Стандартный от</h3>
-                            <strong class="right-what">?</strong>
-                        </div>
-                        <div class="price-type">
-                            <strong class="text-type">
-                                2500 ₽
-                            </strong>
-                            <div class="guist">
-                                <img src="{% static 'images/guist.svg' %}" alt="" class="price-img">
-                                <p class="guist-text">на 1 гостя</p>
-                            </div>
-                        </div>
-                        <p class="type-tickets-text">Проход в парк развлечений  безлимитное <br>посещение всех аттрационов  и шоу</p>
-                        <a href="#" class="type-buy">Купить</a>
-                    </div>
-                    <div class="type-blue">
-                        <div class="type-head">
-                            <h3 class="type-title">Экспресс-вход от</h3>
-                            <strong class="right-what-blue">?</strong>
-                        </div>
-                        <div class="price-type">
-                            <strong class="text-type-blue">
-                                7000 ₽
-                            </strong>
-                            <div class="guist">
-                                <img src="{% static 'images/guist.svg' %}" alt="" class="price-img">
-                                <p class="guist-text">на 1 гостя</p>
-                            </div>
-                        </div>
-                        <p class="type-tickets-text">Тариф “Стандартный” + проход на <br>аттракционы и шоу по ускоренной очереди</p>
-                        <a href="#" class="type-buy-blue">Купить</a>
-                    </div>
-                    <div class="type-orange">
-                        <div class="type-head">
-                            <h3 class="type-title">Стандартный от</h3>
-                            <strong class="right-what-orange">?</strong>
-                        </div>
-                        <div class="price-type">
-                            <strong class="text-type-orange">
-                                7400 ₽
-                            </strong>
-                            <div class="guist">
-                                <img src="{% static 'images/guist.svg' %}" alt="" class="price-img">
-                                <p class="guist-text">на 1 гостя</p>
-                            </div>
-                        </div>
-                        <p class="type-tickets-text">Проход в парк развлечений для 3-х гостей и <br>безлимитное посещение всех аттракционов и шоу</p>
-                        <a href="#" class="type-buy-orange">Купить</a>
-                    </div>
-                    <div class="type">
-                        <div class="type-head">
-                            <h3 class="type-title">Стандартный от</h3>
-                            <strong class="right-what">?</strong>
-                        </div>
-                        <div class="price-type">
-                            <strong class="text-type">
-                                9500 ₽
-                            </strong>
-                            <div class="guist">
-                                <img src="{% static 'images/guist.svg' %}" alt="" class="price-img">
-                                <p class="guist-text">на 1 гостя</p>
-                            </div>
-                        </div>
-                        <p class="type-tickets-text">Проход в парк развлечений для 4-х гостей и <br>безлимитное посещение всех аттракционов и шоу</p>
-                        <a href="#" class="type-buy">Купить</a>
-                    </div>
-                </div>
-            </section>
+<div class="container">
+    <section class="small-playground">
+        <div class="small-info">
+            <ul class="small-list">
+                <li class="small-item"><a href="{% url 'page1' %}" class="small1-link">Главная</a></li>
+                <li class="small-item"><a href="#" class="small2-link">/Чем заняться</a></li>
+                <li class="small-item"><a href="#" class="small3-link">/Малая площадка</a></li>
+            </ul>
+            <h2 class="small-title">Малая площадка</h2>
         </div>
+        <div class="info">
+            <img src="{% static 'images/small.png' %}" alt="" class="small-img">
+            <p class="small-text">В парке представлено более {{ attractions_count }} развлечений на малой площадке, многие из которых не имеют аналогов
+                в России и Европе. <br>
+                От экстремальных аттракционов до уникальных шоу-программ: вас ждет полное погружение в мир
+                волшебства! <br>
+                Мы соблюдаем все международные нормы безопасности, поэтому у некоторых развлечений есть ростовые
+                ограничения.
+            </p>
+        </div>
+    </section>
+    
+    <section class="more-atraction">
+        <div class="head-more">
+            <h2 class="more-title">Более {{ attractions_count }} аттракционов</h2>
+            <div class="right-left">
+                <a href="" class="attraction-link-s">
+                    <img src="{% static 'images/right.png' %}" alt="" class="atraction-link-img">
+                </a>
+                <a href="" class="attraction-link">
+                    <img src="{% static 'images/left.png' %}" alt="" class="atraction-link-img">
+                </a>
+            </div>
+        </div>
+        <div class="atr">
+            {% for attraction in attraction_examples %}
+            <div class="more-item-{{ forloop.counter }}">
+                {% if attraction.main_image %}
+                    <img src="{{ attraction.main_image.url }}" alt="{{ attraction.name }}" class="more-img">
+                {% else %}
+                    <img src="{% static 'images/arrou.svg' %}" alt="{{ attraction.name }}" class="more-img">
+                {% endif %}
+                <div class="more-atraction-text">
+                    <p class="more-text">{{ attraction.description|default:"Незабываемое приключение" }}</p>
+                    <h4 class="more-title-atracrion-{{ forloop.counter }}">{{ attraction.name }}</h4>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="all-atraction">
+            <a href="#" class="all">Все аттракционы</a>
+        </div>
+    </section>
+    
+    <section class="attraction">
+        <div class="head-attraction">
+            <h2 class="attraction-title">Купить билет</h2>
+            <div class="right-left">
+                <a href="" class="attraction-link-s">
+                    <img src="{% static 'images/right.png' %}" alt="" class="atraction-link-img">
+                </a>
+                <a href="" class="attraction-link">
+                    <img src="{% static 'images/left.png' %}" alt="" class="atraction-link-img">
+                </a>
+            </div>
+        </div>
+        <div class="type-tickets">
+            {% for ticket_type in ticket_types %}
+            <div class="type{% if forloop.counter == 2 %}-blue{% elif forloop.counter == 3 %}-orange{% endif %}">
+                <div class="type-head">
+                    <h3 class="type-title">{{ ticket_type.get_name_display }} от</h3>
+                    <strong class="right-what{% if forloop.counter == 2 %}-blue{% elif forloop.counter == 3 %}-orange{% endif %}">?</strong>
+                </div>
+                <div class="price-type">
+                    <strong class="text-type{% if forloop.counter == 2 %}-blue{% elif forloop.counter == 3 %}-orange{% endif %}">
+                        {{ ticket_type.price }} ₽
+                    </strong>
+                    <div class="guist">
+                        <img src="{% static 'images/guist.svg' %}" alt="" class="price-img">
+                        <p class="guist-text">на 1 гостя</p>
+                    </div>
+                </div>
+                <p class="type-tickets-text">{{ ticket_type.description|default:"Проход в парк развлечений безлимитное посещение всех аттракционов и шоу" }}</p>
+                <a href="{% url 'page4' %}" class="type-buy{% if forloop.counter == 2 %}-blue{% elif forloop.counter == 3 %}-orange{% endif %}">Купить</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
 {% endblock %}

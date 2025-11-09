@@ -1,19 +1,16 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ru">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Document</title>
+    <title>Парк аттракционов Мир Мечты</title>
 </head>
-
 <body>
     <header>
         <div class="container">
@@ -26,15 +23,15 @@
                 </div>
                 <nav class="menu">
                     <ul class="menu-list">
-                        <li><a class="menu-link" href="#">Чем заняться</a></li>
-                        <li><a class="menu-link" href="#">Полезное</a></li>
-                        <li><a class="menu-link" href="#">О парке</a></li>
+                        <li><a class="menu-link" href="#activities">Чем заняться</a></li>
+                        <li><a class="menu-link" href="#about">Полезное</a></li>
+                        <li><a class="menu-link" href="#info">О парке</a></li>
                     </ul>
                 </nav>
                 <div class="buy">
-                    <img src="{% static 'images/Group (3).svg' %}" alt="sss" class="img-buy">
+                    <img src="{% static 'images/Group (3).svg' %}" alt="Корзина" class="img-buy">
                     <div class="text-buttn">
-                        <a href="#" class="buttn">Купить <br>билет</a>
+                        <a href="http://127.0.0.1:8000/buy" class="buttn">Купить <br>билет</a>
                     </div>
                 </div>
             </div>
@@ -66,30 +63,32 @@
                         <p>+7 9124106667</p>
                     </div>
                     <div class="contact-item">
-                        <h3>Мы в социальных сетях</h3>
-                        <p>@mirmechty_park</p>
+                        <h3>Аттракционы</h3>
+                        <p>Всего: {{ total_attractions }}</p>
+                        <p>Малых: {{ small_attractions_count }}</p>
+                        <p>Больших: {{ big_attractions_count }}</p>
                     </div>
                 </div>
 
                 <div class="footer-menu-one">
                     <ul>
-                        <li class="footer-item"><a class="footer-link" href="#">О парке</a></li>
-                        <li class="footer-item"><a class="footer-link" href="#">Награды и достижения</a></li>
-                        <li class="footer-item"><a class="footer-link" href="#">Билетная политика</a></li>
-                        <li class="footer-item"><a class="footer-link" href="#">Фотоотчет</a></li>
-                        <li class="footer-item"><a class="footer-link" href="#">Правила посещения</a></li>
-                        <li class="footer-item"><a class="footer-link" href="#">Кафе</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#about">О парке</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#rules">Награды и достижения</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#tickets">Билетная политика</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#gallery">Фотоотчет</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#rules">Правила посещения</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#cafe">Кафе</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-menu">
                     <ul>
-                        <li class="footer-item"><a class="footer-link" href="#">Проект «Русские узоры»</a></li>
-                        <li class="footer-item"><a class="footer-link" href="#">Спорт и отдых</a></li>
-                        <li class="footer-item"><a class="footer-link" href="#">Армия</a></li>
-                        <li class="footer-item"><a class="footer-link" href="#">Фотоотчеты</a></li>
-                        <li class="footer-item"><a class="footer-link" href="#">Контакты</a></li>
-                        <li class="footer-item"><a class="footer-link" href="#">Вакансии</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#projects">Проект «Русские узоры»</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#sport">Спорт и отдых</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#army">Армия</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#reports">Фотоотчеты</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#contacts">Контакты</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#vacancies">Вакансии</a></li>
                     </ul>
                 </div>
             </div>
@@ -100,5 +99,4 @@
         </div>
     </footer>
 </body>
-
 </html>

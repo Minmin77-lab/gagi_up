@@ -4,12 +4,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" >
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&display=swap"
-        rel="stylesheet" >
+        rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Document</title>
@@ -54,9 +54,8 @@
                     </p>
                 </div>
                 <div class="btn">
-                    <a href="#" class="btn-link">Купить билет</a>
+                    <a href="{% url 'page4' %}" class="btn-link">Купить билет</a>
                 </div>
-
             </section>
 
             <section class="about">
@@ -65,7 +64,8 @@
                 </div>
                 <div class="about-us">
                     <h2 class="about__title">О парке</h2>
-                    <p class="about-text">В парке представлено более 50 развлечений, многие из которых не имеют
+                    <p class="about-text">В парке представлено более {{ total_attractions }} развлечений, многие из
+                        которых не имеют
                         <br>аналогов
                         в России и Европе. <br>
                         От экстремальных аттракционов до уникальных шоу-программ: вас ждет <br>полное погружение в мир
@@ -77,6 +77,7 @@
                     </p>
                 </div>
             </section>
+
             <section class="work">
                 <div class="work-park">
                     <h3 class="work-title">Чем заняться в парке</h3>
@@ -96,7 +97,7 @@
                                 Малая <br>площадка
                             </h4>
                         </div>
-                        <a href="http://127.0.0.1:8000/small" class="site-link">Смотреть</a>
+                        <a href="{% url 'page2' %}" class="site-link">Смотреть</a>
                         <div class="kar">
                             <img src="{% static 'images/karuzel.png' %}" alt="kartinka" class="site-img">
                         </div>
@@ -107,7 +108,7 @@
                                 Большая <br>площадка
                             </h4>
                         </div>
-                        <a href="http://127.0.0.1:8000/big" class="site-link-blue">Смотреть</a>
+                        <a href="{% url 'page3' %}" class="site-link-blue">Смотреть</a>
                         <div class="kar">
                             <img src="{% static 'images/karuzel.png' %}" alt="kartinka" class="site-img">
                         </div>
@@ -126,6 +127,7 @@
                 </div>
                 <a href="#" class="rules">Правила посещения</a>
             </section>
+
             <section class="events">
                 <div class="event-park">
                     <h3 class="events-title">События в нашем парке</h3>
@@ -137,38 +139,25 @@
                     </p>
                 </div>
                 <div class="type-list">
+                    {% for attraction in events %}
                     <div class="type-item">
                         <div class="type-img">
-                            <img src="{% static 'images/gorki.png' %}" alt="#" class="typeimages">
+                            {% if attraction.main_image %}
+                            <img src="{{ attraction.main_image.url }}" alt="{{ attraction.name }}" class="typeimages">
+                            {% else %}
+                            <img src="{% static 'images/gorki.png' %}" alt="{{ attraction.name }}" class="typeimages">
+                            {% endif %}
                         </div>
-                        <h4 class="type-title">Бум на американские горки</h4>
+                        <h4 class="type-title">{{ attraction.name }}</h4>
                         <div class="time-price">
                             <p class="time-text">сегодня до 23:00</p>
                             <p class="price-text">Бесплатно</p>
                         </div>
                     </div>
-                    <div class="type-item">
-                        <div class="type-img">
-                            <img src="{% static 'images/kacheli.png' %}" alt="#" class="typeimages">
-                        </div>
-                        <h4 class="type-title">Бум на американские горки</h4>
-                        <div class="time-price">
-                            <p class="time-text">сегодня до 23:00</p>
-                            <p class="price-text">Бесплатно</p>
-                        </div>
-                    </div>
-                    <div class="type-item">
-                        <div class="type-img">
-                            <img src="{% static 'images/detskie-kacheli.png' %}" alt="#" class="typeimages">
-                        </div>
-                        <h4 class="type-title">Бум на американские горки</h4>
-                        <div class="time-price">
-                            <p class="time-text">сегодня до 23:00</p>
-                            <p class="price-text">Бесплатно</p>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </section>
+
             <section class="gallery">
                 <div class="gallery-list">
                     <img src="{% static 'images/kartinkii.png' %}" alt="kartinkii" class="gallery-item">
@@ -192,8 +181,8 @@
             <div class="footer-inner">
                 <div class="footer-logo">
                     <div class="logo-container">
-                        <img src="{% static 'images/Observation Wheel - iconSvg.co.svg' %}" alt="Логотип парка Мир Мечты"
-                            class="footer-logo-img" />
+                        <img src="{% static 'images/Observation Wheel - iconSvg.co.svg' %}"
+                            alt="Логотип парка Мир Мечты" class="footer-logo-img" />
                         <p class="logo-text">Мир мечты</p>
                     </div>
                 </div>

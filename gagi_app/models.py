@@ -10,6 +10,7 @@ class Users(models.Model):
     email = models.EmailField('e-mail', max_length=100, unique=True)
     password_hash = models.CharField('Пароль', max_length=255)
     created_at = models.DateTimeField('Дата и время регистрации')
+    profile_picture = models.ImageField('Фотография профиля', upload_to='users_photos/', null=True, blank=True)
     
     def __str__(self):
         return f"{self.surname} {self.name}"
@@ -33,6 +34,7 @@ class Staff(models.Model):
     position = models.CharField('Должность', max_length=50, choices=POSITION_CHOICES)  
     phone_number = models.CharField('Номер телефона', max_length=20)
     passport = models.CharField('Паспорт', max_length=13, unique=True)
+    photo = models.ImageField('Фотография сотрудника', upload_to='staff_photos/', null=True, blank=True)
     
     def __str__(self):
         return f"{self.name} {self.surname} - {self.get_position_display()}"
@@ -46,25 +48,11 @@ class Staff(models.Model):
         ]
 
 class Attractions(models.Model):
-    MIN_HEIGHT_CHOICES = [
-        (90, '90 см'),
-        (120, '120 см'),
-        (150, '150 см'),
-        (155, '155 см'), 
-        (165, '165 см')       
+    PLAYGROUND_CHOICES = [
+        ('small', 'Малая площадка'),
+        ('big', 'Большая площадка'),
     ]
-    MAX_HEIGHT_CHOICES = [
-        (120, '120 см'),
-        (190, '190 см'),
-        (165, '165 см')      
-    ]
-    MIN_AGE_CHOICES = [
-        (3, '3 года'),
-        (6, '6 лет'),
-        (14, '14 лет'),
-        (16, '16 лет'),
-        (18, '18 лет')      
-    ]
+    
     CAPACITY_CHOICES = [
         (10, '10 человек'),
         (15, '15 человек'),
@@ -77,19 +65,18 @@ class Attractions(models.Model):
         (8, '8 минут'),
         (15, '15 минут')      
     ]
-    AREA_TYPE = [
-        ('малая площадка', 'малая площадка'),
-        ('большая площадка', 'большая площадка'),
-    ]
+
     name = models.CharField('Название', max_length=100, unique=True)
-    min_height = models.IntegerField('Минимальный рост (см)', choices=MIN_HEIGHT_CHOICES)
-    max_height = models.IntegerField('Максимальный рост (см)', choices=MAX_HEIGHT_CHOICES)
-    min_age = models.IntegerField('Минимальный возраст', choices=MIN_AGE_CHOICES)
-    area = models.CharField('площадка', choices=AREA_TYPE)
+    description = models.TextField('Описание', blank=True, null=True)
+    min_height = models.IntegerField('Минимальный рост (см)', null=True, blank=True)
+    max_height = models.IntegerField('Максимальный рост (см)', null=True, blank=True)
+    min_age = models.IntegerField('Минимальный возраст', null=True, blank=True)
     activity_status = models.BooleanField('Статус активности', default=True)
+    playground_type = models.CharField('Тип площадки', max_length=10, choices=PLAYGROUND_CHOICES, default='small')
     capacity = models.IntegerField('Вместимость (чел)', choices=CAPACITY_CHOICES)
-    duration_minutes = models.IntegerField('Продолжительность (мин)', choices=DURATION_CHOICES, default=5)  
+    duration_minutes = models.IntegerField('Продолжительность (мин)', null=True, blank=True)  
     staff = models.ForeignKey(Staff, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Ответственный сотрудник')
+    main_image = models.ImageField('Главное изображение', upload_to='attraction_images/', null=True, blank=True)
     
     def __str__(self):
         staff_name = f" - {self.staff}" if self.staff else ""
@@ -112,6 +99,7 @@ class TicketTypes(models.Model):
     name = models.CharField('Название', max_length=50, choices=NAME_CHOICES)
     price = models.DecimalField('Цена', max_digits=10, decimal_places=2)
     validity_duration = models.IntegerField('Срок действия (дни)', default=1)
+    description = models.TextField('Описание', blank=True, null=True)
     
     def __str__(self):
         return self.get_name_display()
@@ -123,10 +111,15 @@ class TicketTypes(models.Model):
 
 class Tickets(models.Model):
     user = models.ForeignKey(Users, on_delete=models.CASCADE, verbose_name='Пользователь')
-    ticket_type = models.ForeignKey(TicketTypes, on_delete=models.CASCADE, verbose_name='Тип билета')
-    purchase_date = models.DateTimeField('Дата покупки', auto_now_add=True)
-    valid_until = models.DateTimeField('Действителен до')
+    ticket_type = models.ForeignKey(TicketTypes, on_delete=models.PROTECT, verbose_name='Тип билета')
+    purchase_date = models.DateTimeField('Дата и время покупки', default=timezone.now)
+    valid_until = models.DateTimeField('Действителен до', null=True, blank=True)
     usage_time = models.DateTimeField('Время использования', null=True, blank=True)
+    
+    def save(self, *args, **kwargs):
+        if not self.valid_until and self.ticket_type:
+            self.valid_until = self.purchase_date + timedelta(days=self.ticket_type.validity_duration)
+        super().save(*args, **kwargs)
     
     def __str__(self):
         return f"Билет #{self.id} - {self.user.surname} {self.user.name}"
