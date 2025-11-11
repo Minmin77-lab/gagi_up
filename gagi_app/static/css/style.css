@@ -64,6 +64,11 @@ header {
     font-size: 28px;
 }
 
+.link-logo {
+    display: flex;
+    gap: 15px;
+}
+
 .buy {
     align-items: center;
     display: flex;
@@ -92,7 +97,7 @@ header {
 }
 
 .text-fonts {
-    width: 640px;
+    width: 500px;
     font-size: 20px;
 }
 
@@ -145,8 +150,11 @@ header {
     font-weight: 900;
 }
 
+
 .about-text {
     font-size: 20px;
+    width: 600px;
+    line-height: 30px;
 }
 
 .work {
@@ -161,10 +169,22 @@ header {
 
 .text-work {
     font-size: 23px;
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.site-title {
+    display: flex;
+    width: 80px;
+    margin: 0 auto;
+}
+
+.watching {
+    width: 150px;
 }
 
 .work-park {
-    margin-bottom: 40px;
+    margin-bottom: 90px;
 }
 
 h4 {
@@ -273,6 +293,7 @@ h4 {
 
 .text-events {
     font-size: 25px;
+    width: 950px;
 }
 
 .event-park {
@@ -282,6 +303,8 @@ h4 {
 .typeimages {
     width: 300px;
     height: 200px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
 }
 
 .type-item {
@@ -329,6 +352,7 @@ h4 {
 
 .gallery-text {
     font-size: 20px;
+    width: 750px;
 }
 
 .gallery-info {
@@ -416,6 +440,7 @@ footer {
 .small-text {
     font-size: 23px;
     line-height: 27px;
+    width: 1200px;
 }
 
 .small-list {
@@ -445,6 +470,16 @@ footer {
     margin-bottom: 50px;
 }
 
+.menu-link {
+    display: inline-block;
+    transition: all 0.5s;
+}
+
+.menu-link:hover {
+
+    transform: scale(1.05);
+}
+
 .right-left {
     margin-right: 30px;
 
@@ -462,7 +497,8 @@ footer {
     background-color: #FEEAFE;
     border-radius: 27px;
     width: 400px;
-    height: 235px;
+    min-height: 235px;
+    height: auto;
     padding: 0 15px 15px 15px;
     box-shadow: 0 8px 4px #919090;
 }
@@ -512,6 +548,10 @@ footer {
     color: #5B5B5B;
     font-size: 14px;
     margin-bottom: 25px;
+    box-sizing: border-box;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .type-buy {
@@ -519,6 +559,7 @@ footer {
     border-radius: 40px;
     background-color: #BE43C5;
     padding: 10px 28px;
+    transition: all 0.5s;
 }
 
 .type-tickets {
@@ -530,7 +571,8 @@ footer {
     background-color: #E8F0F6;
     border-radius: 27px;
     width: 400px;
-    height: 235px;
+    min-height: 235px;
+    height: auto;
     padding: 0 15px 15px 15px;
     box-shadow: 0 8px 4px #919090;
 }
@@ -561,7 +603,8 @@ footer {
     background-color: #FEE2E2;
     border-radius: 27px;
     width: 400px;
-    height: 235px;
+    min-height: 235px;
+    height: auto;
     padding: 0 15px 15px 15px;
     box-shadow: 0 8px 4px #919090;
 }
@@ -595,7 +638,7 @@ footer {
 .preview-atr {
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
-    width: 400px;
+    width: 400.5px;
 }
 
 .atr-card {
@@ -661,7 +704,7 @@ footer {
     grid-template-columns: repeat(auto-fill, 401px);
     grid-template-rows: repeat(auto-fill, 380px);
     justify-content: space-evenly;
-    
+
 }
 
 .head-more {
@@ -729,6 +772,12 @@ footer {
     border-radius: 45px;
     padding: 15px 10px;
     font-weight: 700;
+    transition: all 0.5s;
+}
+
+.action-btn:hover {
+    background-color: #F58128;
+    color: #fff;
 }
 
 .attention {
@@ -773,7 +822,11 @@ h5 {
     justify-content: space-between;
     padding: 5px 25px;
     align-items: center;
+    height: 50px;
 }
+
+
+
 
 .buy-btn {
     display: flex;

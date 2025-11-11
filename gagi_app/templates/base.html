@@ -1,37 +1,40 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Парк аттракционов Мир Мечты</title>
 </head>
+
 <body>
     <header>
         <div class="container">
             <div class="header-inner">
                 <div class="header-left">
-                    <a href="http://127.0.0.1:8000" class="link-logo">
+                    <a href="{% url 'page1' %}" class="link-logo">
                         <img src="{% static 'images/logo.svg' %}" alt="Логотип парка Мир Мечты" class="logo" />
+                        <h3 class="name">Парк аттракционов Мир Мечты</h3>
                     </a>
-                    <h3 class="name">Парк аттракционов Мир Мечты</h3>
                 </div>
                 <nav class="menu">
                     <ul class="menu-list">
-                        <li><a class="menu-link" href="#activities">Чем заняться</a></li>
-                        <li><a class="menu-link" href="#about">Полезное</a></li>
-                        <li><a class="menu-link" href="#info">О парке</a></li>
+                        <li><a class="menu-link" href="http://127.0.0.1:8000/#GET_BUSY">Чем заняться</a></li>
+                        <li><a class="menu-link" href="http://127.0.0.1:8000/#GALLERY">Галерея</a></li>
+                        <li><a class="menu-link" href="http://127.0.0.1:8000/#ABOUT">О парке</a></li>
                     </ul>
                 </nav>
                 <div class="buy">
                     <img src="{% static 'images/Group (3).svg' %}" alt="Корзина" class="img-buy">
                     <div class="text-buttn">
-                        <a href="http://127.0.0.1:8000/buy" class="buttn">Купить <br>билет</a>
+                        <a href="{% url 'page4' %}" class="buttn">Купить <br>билет</a>
                     </div>
                 </div>
             </div>
@@ -39,8 +42,8 @@
     </header>
 
     <main>
-      {% block main %} 
-      {% endblock %}
+        {% block main %}
+        {% endblock %}
     </main>
 
     <footer>
@@ -48,7 +51,8 @@
             <div class="footer-inner">
                 <div class="footer-logo">
                     <div class="logo-container">
-                        <img src="{% static 'images/Observation Wheel - iconSvg.co.svg' %}" alt="Логотип парка Мир Мечты" class="footer-logo-img" />
+                        <img src="{% static 'images/Observation Wheel - iconSvg.co.svg' %}"
+                            alt="Логотип парка Мир Мечты" class="footer-logo-img" />
                         <p class="logo-text">Мир мечты</p>
                     </div>
                 </div>
@@ -99,4 +103,5 @@
         </div>
     </footer>
 </body>
+
 </html>
