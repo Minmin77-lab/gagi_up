@@ -221,6 +221,13 @@ h4 {
     top: 58px;
 }
 
+.site-imgg {
+    position: relative;
+    left: 51px;
+    top: 72px;
+}
+
+
 .site-item-blue {
     width: 340px;
     height: 430px;
@@ -485,6 +492,10 @@ footer {
 
 }
 
+.wid {
+    width: 120px;
+}
+
 .attraction-title {
     font-size: 32px;
 }
@@ -565,6 +576,11 @@ footer {
 .type-tickets {
     display: flex;
     gap: 30px;
+    min-width: 40%;
+}
+
+.buyy-typpe-billet {
+    min-width: 60%;
 }
 
 .type-blue {
@@ -782,7 +798,9 @@ footer {
 
 .attention {
     margin-bottom: 110px;
+    display: flex;
 }
+
 
 .buy-billet-item {
     background-color: #E8F0F6;
@@ -895,4 +913,218 @@ h5 {
     display: flex;
     justify-content: space-between;
     margin-bottom: 100px;
+}
+
+.background {
+    background-image: url("../images/fontss.jpg");
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.logIn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 50%;
+}
+
+.registrate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 50%;
+}
+
+.page3 {
+    display: flex;
+}
+
+.log {
+    display: flex;
+    min-width: 420px;
+    flex-direction: column;
+    gap: 30px;
+    backdrop-filter: blur(0.5px);
+    background: rgba(255, 255, 255, 0.5);
+    padding: 30px 40px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.reg {
+    display: flex;
+    min-width: 420px;
+    flex-direction: column;
+    gap: 30px;
+    backdrop-filter: blur(25px);
+    background: rgba(255, 255, 255, 0.5);
+    padding: 30px 40px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.log-title {
+    margin-bottom: 10px;
+    color: #Fff;
+    font-size: 40px;
+}
+
+.regis {
+    color: #F58128;
+}
+
+.logIn-input {
+    width: 85%;
+    height: 100%;
+    background: transparent;
+    border: 3px solid #F58128;
+    outline: none;
+    border-radius: 40px;
+    font-size: 27px;
+    color: #F58128;
+    padding: 20px 45px 20px 20px;
+}
+
+.logIn-input::placeholder {
+    color: #F58128;
+}
+
+.logIn-input-reg::placeholder {
+    color: #FFF;
+}
+
+.logIn-input-reg {
+    width: 85%;
+    height: 100%;
+    background: transparent;
+    border: 3px solid #fff;
+    outline: none;
+    border-radius: 40px;
+    font-size: 27px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.logInt-btn {
+    padding: 20px 10px;
+    background-color: #F58128;
+    border: none;
+    border-radius: 30px;
+    width: 150px;
+    color: #fff;
+    margin: 0 auto;
+    font-size: 25px;
+}
+
+.logInt-btn-reg {
+    padding: 20px 10px;
+    background-color: #fff;
+    border: none;
+    border-radius: 30px;
+    width: 150px;
+    color: #F58128;
+    margin: 0 auto;
+    font-size: 25px;
+}
+
+.buy-type-tickets {
+    flex-direction: column;
+}
+
+.buyy-typpe-billet {
+    font-size: 30px;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.payment-btn {
+    padding: 10px 20px;
+    border: 2px solid #F58128;
+    background-color: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #F58128;
+    font-size: 25px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.payment-btn:hover {
+    background-color: #e9e9e9;
+}
+
+.payment-checkbox {
+    display: none;
+}
+
+.payment-checkbox:checked+.payment-btn {
+    background-color: #F58128;
+    color: white;
+}
+
+.buyy-typpe-billet-item{
+    width: 500px;
+    margin-left: 100px;
+    min-height: 600px;
+    border-radius: 40px;
+    padding: 30px 100px;
+    box-shadow: 0px 0px 20px 0px #585858;
+}
+
+.buyy-typpe-billet-item-title{
+    display: inline;
+    margin-left: 20px;
+    font-size: 35px;
+    font-weight: 700;
+    color: #F58128;
+    margin-bottom: 0;
+}
+
+.buyy-typpe-billet-item-header{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 2px solid #a7a6a6;
+}
+.buyy-typpe-billet-item-main{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 2px solid #a7a6a6;
+    margin-bottom: 30px;
+}
+
+.buyy-typpe-billet-item-text{
+    font-size: 30px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+
+.payment-methods{
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+
+.buyy-typpe-billet{
+    align-items: center;
+    margin-top: 200px;
+}
+
+.buyy-typpe-billet-item-btn{
+    padding: 20px 30px;
+    background-color: #F58128;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    margin: 0 auto;
+    font-size: 25px;
+    margin-left: 150px;
 }

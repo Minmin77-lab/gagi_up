@@ -29,28 +29,18 @@ def page1(request):
     return render(request, 'page1.html', context)
 
 def page2(request):
-    # Малая площадка
-    small_attractions = Attractions.objects.filter(playground_type='small', activity_status=True)
+    attractions = Attractions.objects.filter(activity_status=True)
     
     context = {
-        'attractions': small_attractions,
-        'attractions_count': small_attractions.count(),
-        'attraction_examples': small_attractions[:3],  # Берем первые 3 аттракциона из базы
+        'attractions': attractions,
+        'attractions_count': attractions.count(),
+        'attraction_examples': attractions[:3],  # Берем первые 3 аттракциона из базы
         'ticket_types': TicketTypes.objects.all(),
     }
     return render(request, 'page2.html', context)
 
 def page3(request):
-    # Большая площадка  
-    big_attractions = Attractions.objects.filter(playground_type='big', activity_status=True)
-    
-    context = {
-        'attractions': big_attractions,
-        'attractions_count': big_attractions.count(),
-        'attraction_examples': big_attractions[:3],  # Берем первые 3 аттракциона из базы
-        'ticket_types': TicketTypes.objects.all(),
-    }
-    return render(request, 'page3.html', context)
+    return render(request, 'page3.html')
 
 def page4(request):
     # Страница покупки билетов

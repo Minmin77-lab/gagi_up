@@ -1,4 +1,4 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% load static %}
 
 {%block main%}
@@ -12,41 +12,58 @@
             <h2 class="small-title">Купить билет</h2>
         </div>
     </section>
-    
+
     <section class="attention">
-        <div class="body-attention">
-            <div class="title-attention">
-                <h4 class="attention-title">Обратите внимание</h4>
-            </div>
-            <div class="action">
-                <div class="action-list">
-                    <p class="action-text">Билет действителен только в выбранную дату</p>
-                    <p class="action-text">Время работы парка развлечений: с 10:00 до 22:00</p>
+        <div class="type-tickets buy-type-tickets">
+            {% for ticket_type in ticket_types %}
+            <div class="type{% if forloop.counter == 2 %}-blue{% elif forloop.counter == 3 %}-orange{% endif %}">
+                <div class="type-head">
+                    <h3 class="type-title">{{ ticket_type.get_name_display }} от</h3>
+                    <strong
+                        class="right-what{% if forloop.counter == 2 %}-blue{% elif forloop.counter == 3 %}-orange{% endif %}">?</strong>
                 </div>
-                <a href="#" class="action-btn">Правила посещения парка</a>
+                <div class="price-type">
+                    <strong
+                        class="text-type{% if forloop.counter == 2 %}-blue{% elif forloop.counter == 3 %}-orange{% endif %}">
+                        {{ ticket_type.price }} ₽
+                    </strong>
+                    <div class="guist">
+                        <img src="{% static 'images/guist.svg' %}" alt="" class="price-img">
+                        <p class="guist-text">на 1 гостя</p>
+                    </div>
+                </div>
+                <p class="type-tickets-text">{{ ticket_type.description|default:"Проход в парк развлечений безлимитное
+                    посещение всех аттракционов и шоу" }}</p>
+                <a href="{% url 'page4' %}"
+                    class="type-buy{% if forloop.counter == 2 %}-blue{% elif forloop.counter == 3 %}-orange{% endif %}">Купить</a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="buyy-typpe-billet">
+            <div class="buyy-typpe-billet-item">
+                <div class="buyy-typpe-billet-item-header">
+                    <h4 class="buyy-typpe-billet-item-title">Выбрано</h4>
+                    <p class="buyy-typpe-billet-item-text">тип билета и вся инфа о нем</p>
+                </div>
+                <div class="buyy-typpe-billet-item-main">
+                    <h4 class="buyy-typpe-billet-item-title">Итого к оплате</h4>
+                    <p class="buyy-typpe-billet-item-text">сумма к оплате</p>
+                </div>
+                <div class="payment-methods">
+                    <input type="checkbox" id="card-btn" class="payment-checkbox">
+                    <label for="card-btn" class="payment-btn">Картой</label>
+
+                    <input type="checkbox" id="sbp-btn" class="payment-checkbox">
+                    <label for="sbp-btn" class="payment-btn">СБП</label>
+
+                    <input type="checkbox" id="yandex-btn" class="payment-checkbox">
+                    <label for="yandex-btn" class="payment-btn">ЯндексПей</label>
+                </div>
+                <button class="buyy-typpe-billet-item-btn">Оплатить</button>
             </div>
         </div>
     </section>
-    
-    <section class="buy-billet">
-        {% for billet in billet_data %}
-        <div class="buy-billet-item{% if billet.type == 'pink' or forloop.counter == 2 %} pink{% endif %}">
-            <img src="{% static 'images/' %}{{ billet.image }}" alt="{{ billet.title }}" class="buy-billet-images">
-            <div class="head-buy-billet">
-                <h5 class="title-buy-billet{% if billet.type == 'pink' or forloop.counter == 2 %} pinkii{% endif %}">{{ billet.title }}</h5>
-                <p class="buy-billet-price">{{ billet.price }}</p>
-            </div>
-            <div class="footer-billet">
-                <p class="billet-time">{{ billet.time }}</p>
-                <div class="button-buy-billet{% if billet.type == 'pink' or forloop.counter == 2 %} pink-sss{% endif %}">
-                    <a href="#" class="buy-btn{% if billet.type == 'pink' or forloop.counter == 2 %} pink-s{% endif %}">
-                        Купить билет
-                        <div class="images-buy-billet{% if billet.type == 'pink' or forloop.counter == 2 %} pink-ss{% endif %}"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </section>
+
+
 </div>
 {%endblock%}
