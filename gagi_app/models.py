@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from datetime import timedelta
+from django.contrib.auth.hashers import make_password, check_password
 
 class Users(models.Model):
     name = models.CharField(verbose_name='Имя', max_length=20)
@@ -9,8 +10,14 @@ class Users(models.Model):
     phone_number = models.CharField('Номер телефона', max_length=20)
     email = models.EmailField('e-mail', max_length=100, unique=True)
     password_hash = models.CharField('Пароль', max_length=255)
-    created_at = models.DateTimeField('Дата и время регистрации')
+    created_at = models.DateTimeField('Дата и время регистрации', auto_now_add=True)
     profile_picture = models.ImageField('Фотография профиля', upload_to='users_photos/', null=True, blank=True)
+    
+    def set_password(self, raw_password):
+        self.password_hash = make_password(raw_password)
+    
+    def check_password(self, raw_password):
+        return check_password(raw_password, self.password_hash)
     
     def __str__(self):
         return f"{self.surname} {self.name}"

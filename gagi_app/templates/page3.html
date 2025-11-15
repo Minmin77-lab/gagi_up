@@ -19,23 +19,30 @@
         <div class="container">
             <section class="page3">
                 <div class="logIn">
-                    <form action="" class="log">
+                    <form method="POST" class="log">
+                        {% csrf_token %}
                         <h1 class="log-title regis">Вход</h1>
-                        <input type="text" placeholder="Ваше имя и фамилия" required class="logIn-input">
-                        <input type="text" placeholder="Номер телефона или электронная почта" required
-                            class="logIn-input">
-                        <input type="text" placeholder="Пароль" required class="logIn-input">
-                        <button class="logInt-btn">Войти</button>
+                        {% if error_message %}
+                        <div style="color: red; margin-bottom: 15px;">{{ error_message }}</div>
+                        {% endif %}
+                        {% if success_message %}
+                        <div style="color: green; margin-bottom: 15px;">{{ success_message }}</div>
+                        {% endif %}
+                        <input type="email" name="email" placeholder="Электронная почта" required class="logIn-input">
+                        <input type="password" name="password" placeholder="Пароль" required class="logIn-input">
+                        <button type="submit" name="login" class="logInt-btn">Войти</button>
                     </form>
                 </div>
                 <div class="registrate">
-                    <form action="" class="reg">
+                    <form method="POST" class="reg">
+                        {% csrf_token %}
                         <h1 class="log-title ">Зарегистрироваться</h1>
-                        <input type="text" placeholder="Ваше имя и фамилия" required class="logIn-input-reg">
-                        <input type="text" placeholder="Номер телефона или  электронная почта" required
-                            class="logIn-input-reg">
-                        <input type="text" placeholder="Пароль" required class="logIn-input-reg">
-                        <button class="logInt-btn-reg">Войти</button>
+                        <input type="text" name="reg_name" placeholder="Ваше имя" required class="logIn-input-reg">
+                        <input type="text" name="reg_surname" placeholder="Ваша фамилия" required class="logIn-input-reg">
+                        <input type="email" name="reg_email" placeholder="Электронная почта" required class="logIn-input-reg">
+                        <input type="text" name="reg_phone" placeholder="Номер телефона" required class="logIn-input-reg">
+                        <input type="password" name="reg_password" placeholder="Пароль" required class="logIn-input-reg">
+                        <button type="submit" name="register" class="logInt-btn-reg">Зарегистрироваться</button>
                     </form>
                 </div>
             </section>

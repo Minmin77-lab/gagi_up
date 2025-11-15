@@ -34,7 +34,14 @@
                 <div class="buy">
                     <img src="{% static 'images/Group (3).svg' %}" alt="Корзина" class="img-buy">
                     <div class="text-buttn">
-                        <a href="{% url 'page4' %}" class="buttn">Купить <br>билет</a>
+                        {% if user %}
+                            <a href="{% url 'page4' %}" class="buttn">Купить <br>билет</a>
+                            <div style="font-size: 14px; margin-top: 5px;">
+                                {{ user.name }} | <a href="{% url 'logout' %}" style="color: #3972AE;">Выйти</a>
+                            </div>
+                        {% else %}
+                            <a href="{% url 'page3' %}" class="buttn">Купить <br>билет</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -66,11 +73,9 @@
                         <h3>Телефон</h3>
                         <p>+7 9124106667</p>
                     </div>
-                    <div class="contact-item">
-                        <h3>Аттракционы</h3>
-                        <p>Всего: {{ total_attractions }}</p>
-                        <p>Малых: {{ small_attractions_count }}</p>
-                        <p>Больших: {{ big_attractions_count }}</p>
+                     <div class="contact-item">
+                        <h3>Мы в социальных сетях</h3>
+                        <p>@mirmechty_park</p>
                     </div>
                 </div>
 

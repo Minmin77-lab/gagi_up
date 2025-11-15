@@ -1,7 +1,9 @@
-from django.shortcuts import render
-from .models import Attractions, TicketTypes, Staff, SituationStage
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
+from .models import Attractions, TicketTypes, Staff, SituationStage, Users
 from django.utils import timezone
 from datetime import timedelta
+from django.contrib.sessions.backends.db import SessionStore
 
 def page1(request):
     # Главная страница - все данные для page1.html
@@ -25,6 +27,9 @@ def page1(request):
         
         # Сотрудники для отображения
         'staff_members': Staff.objects.all()[:3],
+        
+        # Информация о пользователе
+        'user': get_user_from_session(request),
     }
     return render(request, 'page1.html', context)
 
@@ -34,39 +39,78 @@ def page2(request):
     context = {
         'attractions': attractions,
         'attractions_count': attractions.count(),
-        'attraction_examples': attractions[:3],  # Берем первые 3 аттракциона из базы
+        'attraction_examples': attractions[:3],
         'ticket_types': TicketTypes.objects.all(),
+        'user': get_user_from_session(request),
     }
     return render(request, 'page2.html', context)
 
 def page3(request):
-    return render(request, 'page3.html')
+    error_message = None
+    success_message = None
+    
+    # Обработка входа
+    if request.method == 'POST' and 'login' in request.POST:
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        
+        try:
+            user = Users.objects.get(email=email)
+            if user.check_password(password):
+                # Сохраняем пользователя в сессии
+                request.session['user_id'] = user.id
+                request.session['user_name'] = f"{user.name} {user.surname}"
+                return redirect('page4')
+            else:
+                error_message = "Неверный пароль"
+        except Users.DoesNotExist:
+            error_message = "Пользователь не найден"
+    
+    # Обработка регистрации
+    elif request.method == 'POST' and 'register' in request.POST:
+        name = request.POST.get('reg_name')
+        surname = request.POST.get('reg_surname')
+        email = request.POST.get('reg_email')
+        phone = request.POST.get('reg_phone')
+        password = request.POST.get('reg_password')
+        
+        try:
+            # Проверяем, нет ли уже пользователя с таким email
+            if Users.objects.filter(email=email).exists():
+                error_message = "Пользователь с таким email уже существует"
+            else:
+                # Создаем нового пользователя
+                user = Users(
+                    name=name,
+                    surname=surname,
+                    email=email,
+                    phone_number=phone,
+                    birth_date=timezone.now().date(),  # По умолчанию
+                    created_at=timezone.now()
+                )
+                user.set_password(password)
+                user.save()
+                success_message = "Регистрация успешна! Теперь вы можете войти."
+        except Exception as e:
+            error_message = f"Ошибка при регистрации: {str(e)}"
+    
+    context = {
+        'error_message': error_message,
+        'success_message': success_message,
+        'user': get_user_from_session(request),
+    }
+    return render(request, 'page3.html', context)
 
 def page4(request):
+    # Проверяем авторизацию
+    user = get_user_from_session(request)
+    if not user:
+        return redirect('page3')
+    
     # Страница покупки билетов
     ticket_types = TicketTypes.objects.all()
     
-    # Создаем данные для билетов на основе реальных типов билетов
-    billet_data = []
-    for ticket_type in ticket_types[:2]:  # Берем первые 2 типа билетов
-        billet_data.append({
-            'title': f'{ticket_type.get_name_display()} билет',
-            'price': f'{ticket_type.price} ₽',
-            'time': 'с 10.00 до 20.00',
-            'image': 'snow.png' if ticket_type.name == 'child' else 'kino.png',
-            'type': ticket_type.name,
-            'description': ticket_type.description or f'Билет типа {ticket_type.get_name_display()}'
-        })
-    
-    context = {
-        'ticket_types': ticket_types,
-        'billet_data': billet_data,
-    }
-    return render(request, 'page4.html', context)
-
-def page4(request):
-    ticket_types = TicketTypes.objects.all()
-
+    # Обработка выбора билета
     selected_ticket_id = request.GET.get('ticket_id')
     selected_ticket = None
     
@@ -79,6 +123,22 @@ def page4(request):
     context = {
         'ticket_types': ticket_types,
         'selected_ticket': selected_ticket,
+        'user': user,
     }
     return render(request, 'page4.html', context)
 
+def logout(request):
+    # Выход пользователя
+    if 'user_id' in request.session:
+        del request.session['user_id']
+        del request.session['user_name']
+    return redirect('page1')
+
+# Вспомогательная функция для получения пользователя из сессии
+def get_user_from_session(request):
+    if 'user_id' in request.session:
+        try:
+            return Users.objects.get(id=request.session['user_id'])
+        except Users.DoesNotExist:
+            return None
+    return None
