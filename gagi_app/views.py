@@ -63,3 +63,22 @@ def page4(request):
         'billet_data': billet_data,
     }
     return render(request, 'page4.html', context)
+
+def page4(request):
+    ticket_types = TicketTypes.objects.all()
+
+    selected_ticket_id = request.GET.get('ticket_id')
+    selected_ticket = None
+    
+    if selected_ticket_id:
+        try:
+            selected_ticket = TicketTypes.objects.get(id=selected_ticket_id)
+        except TicketTypes.DoesNotExist:
+            selected_ticket = None
+    
+    context = {
+        'ticket_types': ticket_types,
+        'selected_ticket': selected_ticket,
+    }
+    return render(request, 'page4.html', context)
+

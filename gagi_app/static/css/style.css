@@ -1128,3 +1128,12 @@ h5 {
     font-size: 25px;
     margin-left: 150px;
 }
+
+.ticket-selected {
+    box-shadow: 0 12px 8px rgba(245, 129, 40, 0.3) !important;
+}
+
+.ticket-link {
+    text-decoration: none;
+    display: block;
+}

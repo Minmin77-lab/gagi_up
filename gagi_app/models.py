@@ -100,6 +100,7 @@ class TicketTypes(models.Model):
     price = models.DecimalField('Цена', max_digits=10, decimal_places=2)
     validity_duration = models.IntegerField('Срок действия (дни)', default=1)
     description = models.TextField('Описание', blank=True, null=True)
+    quantity = models.CharField('Количество гостей', max_length=50, default='1 гость')
     
     def __str__(self):
         return self.get_name_display()

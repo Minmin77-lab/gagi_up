@@ -16,54 +16,65 @@
     <section class="attention">
         <div class="type-tickets buy-type-tickets">
             {% for ticket_type in ticket_types %}
-            <div class="type{% if forloop.counter == 2 %}-blue{% elif forloop.counter == 3 %}-orange{% endif %}">
-                <div class="type-head">
-                    <h3 class="type-title">{{ ticket_type.get_name_display }} от</h3>
-                    <strong
-                        class="right-what{% if forloop.counter == 2 %}-blue{% elif forloop.counter == 3 %}-orange{% endif %}">?</strong>
-                </div>
-                <div class="price-type">
-                    <strong
-                        class="text-type{% if forloop.counter == 2 %}-blue{% elif forloop.counter == 3 %}-orange{% endif %}">
-                        {{ ticket_type.price }} ₽
-                    </strong>
-                    <div class="guist">
-                        <img src="{% static 'images/guist.svg' %}" alt="" class="price-img">
-                        <p class="guist-text">на 1 гостя</p>
+            <a href="?ticket_id={{ ticket_type.id }}" class="ticket-link">
+                <div class="type{% if forloop.counter == 2 %}-blue{% elif forloop.counter == 3 %}-orange{% endif %} 
+                     {% if selected_ticket and selected_ticket.id == ticket_type.id %}ticket-selected{% endif %}">
+                    <div class="type-head">
+                        <h3 class="type-title">{{ ticket_type.get_name_display }} от</h3>
+                        <strong
+                            class="right-what{% if forloop.counter == 2 %}-blue{% elif forloop.counter == 3 %}-orange{% endif %}">?</strong>
                     </div>
+                    <div class="price-type">
+                        <strong
+                            class="text-type{% if forloop.counter == 2 %}-blue{% elif forloop.counter == 3 %}-orange{% endif %}">
+                            {{ ticket_type.price }} ₽
+                        </strong>
+                        <div class="guist">
+                            <img src="{% static 'images/guist.svg' %}" alt="" class="price-img">
+                            <p class="guist-text">{{ ticket_type.quantity }}</p>
+                        </div>
+                    </div>
+                    <p class="type-tickets-text">{{ ticket_type.description|default:"Проход в парк развлечений безлимитное посещение всех аттракционов и шоу" }}</p>
                 </div>
-                <p class="type-tickets-text">{{ ticket_type.description|default:"Проход в парк развлечений безлимитное
-                    посещение всех аттракционов и шоу" }}</p>
-                <a href="{% url 'page4' %}"
-                    class="type-buy{% if forloop.counter == 2 %}-blue{% elif forloop.counter == 3 %}-orange{% endif %}">Купить</a>
-            </div>
+            </a>
             {% endfor %}
         </div>
         <div class="buyy-typpe-billet">
             <div class="buyy-typpe-billet-item">
                 <div class="buyy-typpe-billet-item-header">
                     <h4 class="buyy-typpe-billet-item-title">Выбрано</h4>
-                    <p class="buyy-typpe-billet-item-text">тип билета и вся инфа о нем</p>
+                    <p class="buyy-typpe-billet-item-text">
+                        {% if selected_ticket %}
+                            <strong>{{ selected_ticket.get_name_display }}</strong><br>
+                            {{ selected_ticket.description|default:"Проход в парк развлечений безлимитное посещение всех аттракционов и шоу" }}
+                        {% else %}
+                            тип билета и вся инфа о нем
+                        {% endif %}
+                    </p>
                 </div>
                 <div class="buyy-typpe-billet-item-main">
                     <h4 class="buyy-typpe-billet-item-title">Итого к оплате</h4>
-                    <p class="buyy-typpe-billet-item-text">сумма к оплате</p>
+                    <p class="buyy-typpe-billet-item-text">
+                        {% if selected_ticket %}
+                            {{ selected_ticket.price }} ₽
+                        {% else %}
+                            сумма к оплате
+                        {% endif %}
+                    </p>
                 </div>
                 <div class="payment-methods">
-                    <input type="checkbox" id="card-btn" class="payment-checkbox">
+                    <input type="radio" id="card-btn" name="payment-method" class="payment-checkbox">
                     <label for="card-btn" class="payment-btn">Картой</label>
 
-                    <input type="checkbox" id="sbp-btn" class="payment-checkbox">
+                    <input type="radio" id="sbp-btn" name="payment-method" class="payment-checkbox">
                     <label for="sbp-btn" class="payment-btn">СБП</label>
 
-                    <input type="checkbox" id="yandex-btn" class="payment-checkbox">
+                    <input type="radio" id="yandex-btn" name="payment-method" class="payment-checkbox">
                     <label for="yandex-btn" class="payment-btn">ЯндексПей</label>
                 </div>
                 <button class="buyy-typpe-billet-item-btn">Оплатить</button>
             </div>
         </div>
     </section>
-
-
 </div>
 {%endblock%}
