@@ -1070,7 +1070,7 @@ h5 {
     color: white;
 }
 
-.buyy-typpe-billet-item{
+.buyy-typpe-billet-item {
     width: 500px;
     margin-left: 100px;
     min-height: 600px;
@@ -1079,7 +1079,7 @@ h5 {
     box-shadow: 0px 0px 20px 0px #585858;
 }
 
-.buyy-typpe-billet-item-title{
+.buyy-typpe-billet-item-title {
     display: inline;
     margin-left: 20px;
     font-size: 35px;
@@ -1088,13 +1088,14 @@ h5 {
     margin-bottom: 0;
 }
 
-.buyy-typpe-billet-item-header{
+.buyy-typpe-billet-item-header {
     display: flex;
     flex-direction: column;
     gap: 20px;
     border-bottom: 2px solid #a7a6a6;
 }
-.buyy-typpe-billet-item-main{
+
+.buyy-typpe-billet-item-main {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -1102,23 +1103,23 @@ h5 {
     margin-bottom: 30px;
 }
 
-.buyy-typpe-billet-item-text{
+.buyy-typpe-billet-item-text {
     font-size: 30px;
     margin-bottom: 50px;
     margin-left: 20px;
 }
 
-.payment-methods{
+.payment-methods {
     margin-left: 50px;
     margin-bottom: 30px;
 }
 
-.buyy-typpe-billet{
+.buyy-typpe-billet {
     align-items: center;
     margin-top: 200px;
 }
 
-.buyy-typpe-billet-item-btn{
+.buyy-typpe-billet-item-btn {
     padding: 20px 30px;
     background-color: #F58128;
     border: none;
@@ -1136,4 +1137,134 @@ h5 {
 .ticket-link {
     text-decoration: none;
     display: block;
+}
+
+.rate-area>label:active {
+    position: relative;
+}
+
+.rating-form {
+    margin: 20px 0;
+    text-align: left;
+}
+
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content:start;
+    gap: 5px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    cursor: pointer;
+    color: #ddd;
+    transition: color 0.2s;
+}
+
+.star-rating label:hover,
+.star-rating label:hover~label,
+.star-rating input:checked~label {
+    color: #ffc107;
+}
+
+.star-icon {
+    transition: all 0.2s;
+}
+
+.star-rating label:hover .star-icon {
+    transform: scale(1.2);
+}
+
+.form-obrat {
+    margin-bottom: 50px;
+}
+
+.oc {
+    background: linear-gradient(153deg, #9747ff 13.94%, #c786fb 51.68%, #f7c5f8 89.42%);
+    width: 900px;
+    height: 430px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 30px;
+    text-align: left;
+    color: #fff;
+    display: flex;
+}
+
+.star-rating-area {
+    border: 2px solid #fff;
+    background: none;
+    opacity: 1.0;
+    border-radius: 30px;
+    height: 100px;
+    width: 100%;
+    max-width: 300px;
+    outline: none;
+    padding: 10px;
+    color: #fff;
+    resize: vertical;
+}
+
+.star-rating-area::placeholder {
+    color: #fff;
+    text-align: left;
+}
+
+.rating-title {
+    font-size: 40px;
+    margin: 0 0 15px 0;
+    text-align: left;
+}
+
+.rating-name {
+    font-size: 30px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.diz-title {
+    font-size: 25px;
+    margin: 10px 0;
+    text-align: left;
+    margin-right: 15px;
+}
+
+.text-area-btn {
+    background-color: #fff;
+    border-radius: 30px;
+    color: #9747FF;
+    padding: 10px 30px;
+    font-size: 20px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    bottom: 150px;
+    left: 250px;
+
+}
+
+.text-area-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.text-area {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    
+}
+
+.kar-img{
+    width: 500px;
 }
