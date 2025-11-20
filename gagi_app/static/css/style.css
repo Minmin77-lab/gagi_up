@@ -16,12 +16,6 @@ li {
 .body {
     font-family: "Cormorant Infant", serif;
     color: #000;
-    background-image: url("../images/font.png");
-    background-repeat: no-repeat;
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    height: 700px;
 }
 
 body {
@@ -35,12 +29,14 @@ body {
 }
 
 header {
+    width: 100%;
     background-color: #cbe8ff;
     border-bottom-left-radius: 180px;
     border-bottom-right-radius: 180px;
 }
 
 .header-inner {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 20px 0 20px 0;
@@ -844,7 +840,9 @@ h5 {
 }
 
 
-
+.background {
+    margin: 0;
+}
 
 .buy-btn {
     display: flex;
@@ -1152,7 +1150,7 @@ h5 {
 .star-rating {
     display: flex;
     flex-direction: row-reverse;
-    justify-content:start;
+    justify-content: start;
     gap: 5px;
     margin-bottom: 15px;
     align-items: center;
@@ -1262,9 +1260,635 @@ h5 {
     justify-content: space-between;
     gap: 10px;
     width: 100%;
-    
+
 }
 
-.kar-img{
+.kar-img {
     width: 500px;
+}
+
+.fooon {
+    width: 100%;
+    position: absolute;
+    bottom: 150px;
+    z-index: -1000;
+}
+
+.fooon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1000;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin-top: 150px;
+}
+
+@media (max-width: 768px) {
+    main {
+        margin-top: 100px;
+    }
+
+    .fooon {
+        height: 100px;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        margin-top: 80px;
+    }
+
+    .fooon {
+        height: 80px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .container {
+        width: 95%;
+        max-width: 1400px;
+    }
+
+
+    .small-img {
+        margin: 0;
+    }
+
+    .menu-list {
+        gap: 60px;
+    }
+
+    .text-work {
+        width: 90%;
+    }
+
+    .gallery-info {
+        left: 400px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        width: 95%;
+        padding: 0 15px;
+    }
+
+    .header-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .menu-list {
+        gap: 40px;
+        font-size: 24px;
+    }
+
+    .about {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    .vata-puz {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        position: static;
+    }
+
+    .about-us {
+        width: 90%;
+        text-align: center;
+    }
+
+    .list-site {
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .type-list {
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .gallery-info {
+        position: static;
+        width: 100%;
+        text-align: center;
+    }
+
+    .gallery-list img {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .footer-contacts {
+        margin-right: 100px;
+    }
+
+    .footer-menu-one {
+        margin-right: 100px;
+    }
+
+    .type-tickets {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .attention {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buyy-typpe-billet {
+        margin-top: 50px;
+        margin-left: 0;
+    }
+
+    .fonts {
+        height: auto;
+    }
+
+    .gallery-item {
+        display: none;
+    }
+
+    .gallery-text {
+        margin: 0 auto;
+    }
+
+    .gallery {
+        margin-bottom: 50px;
+    }
+
+    .about-text {
+        margin: 0 auto;
+    }
+
+    .oc {
+        width: 600px;
+    }
+
+    .text-area-btn {
+        background-color: #fff;
+        border-radius: 30px;
+        color: #9747FF;
+        padding: 10px 30px;
+        font-size: 20px;
+        border: none;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s;
+        position: static;
+        margin-top: 220% ;
+    }
+
+    .small-img, .small-text {
+        width: 100%;
+    }
+
+    .kar-img {
+        display: none;
+    }
+
+    .atr {
+        width: auto;
+        margin: 0 auto;
+        grid-template-columns: repeat 350px;
+    }
+}
+
+@media (max-width: 992px) {
+    .menu-list {
+        font-size: 20px;
+        gap: 30px;
+    }
+
+    .name {
+        font-size: 20px;
+        width: 200px;
+    }
+
+    .buttn {
+        font-size: 28px;
+    }
+
+    .fonts {
+        height: auto;
+        text-align: center;
+    }
+
+    .name-park {
+        margin-top: 150px;
+    }
+
+    .text-fonts {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .btn {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .work-park {
+        margin-bottom: 50px;
+    }
+
+    .text-work {
+        font-size: 20px;
+        width: 95%;
+    }
+
+    .events-title,
+    .work-title,
+    .about__title {
+        font-size: 32px;
+    }
+
+    .text-events {
+        width: 95%;
+        font-size: 20px;
+    }
+
+    .gallery-text {
+        width: 95%;
+    }
+
+    .footer-contacts {
+        margin-right: 50px;
+    }
+
+    .footer-menu-one {
+        margin-right: 50px;
+    }
+
+    .small-text {
+        width: 95%;
+        font-size: 20px;
+    }
+
+    .small-img {
+        margin-left: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .page3 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logIn,
+    .registrate {
+        width: 100%;
+        min-height: auto;
+        margin: 20px 0;
+    }
+
+    .oc {
+        flex-direction: column;
+        height: auto;
+        padding: 30px;
+    }
+
+    .kar-img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+
+    .text-area-btn {
+        position: static;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-inner {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-list {
+        flex-direction: column;
+        gap: 15px;
+        margin: 20px 0;
+    }
+
+    .buy {
+        justify-content: center;
+    }
+
+    header {
+        border-bottom-left-radius: 90px;
+        border-bottom-right-radius: 90px;
+    }
+
+    footer {
+        border-top-left-radius: 90px;
+        border-top-right-radius: 90px;
+    }
+
+    .site-imgg, .site-img{
+        height: 230px;
+    }
+
+    .title-park {
+        font-size: 40px;
+    }
+
+    .title-name {
+        font-size: 28px;
+    }
+
+    .about-text {
+        width: 95%;
+        font-size: 18px;
+    }
+
+    .site-item,
+    .site-item-blue,
+    .site-item-pink {
+        width: 300px;
+        height: 380px;
+    }
+
+    .type,
+    .type-blue,
+    .type-orange {
+        width: 350px;
+    }
+
+    .atr-card {
+        width: 350px;
+    }
+
+    .art-text-1,
+    .art-text-2,
+    .art-text-3 {
+        width: 350px;
+    }
+
+    .preview-atr {
+        width: 350.5px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-contacts,
+    .footer-menu-one {
+        margin-right: 0;
+    }
+
+    .footer-menu-one,
+    .footer-menu {
+        margin-top: 20px;
+    }
+
+    .small-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .head-more,
+    .head-attraction {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .right-left {
+        margin-right: 0;
+    }
+
+    .buyy-typpe-billet-item {
+        width: 90%;
+        padding: 20px;
+        margin-left: 0;
+    }
+
+    .buyy-typpe-billet-item-btn {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .payment-methods {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .log,
+    .reg {
+        min-width: 90%;
+    }
+
+    .star-rating {
+        align-items: flex-start;
+    }
+
+    .text-area {
+        flex-direction: column;
+    }
+
+    .list-site {
+        margin-bottom: 100px;
+    }
+
+    .footer-item {
+        display: inline;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    .name {
+        font-size: 18px;
+        width: 150px;
+    }
+
+    .buttn {
+        font-size: 24px;
+    }
+
+    .menu-list {
+        font-size: 18px;
+    }
+
+    .title-park {
+        font-size: 32px;
+    }
+
+    .title-name {
+        font-size: 24px;
+    }
+
+    .text-fonts {
+        font-size: 18px;
+    }
+
+    .btn {
+        font-size: 20px;
+        padding: 15px 25px;
+    }
+
+    .about__title,
+    .work-title,
+    .events-title {
+        font-size: 28px;
+    }
+
+    .about-text,
+    .text-work,
+    .text-events {
+        font-size: 18px;
+    }
+
+    .site-item,
+    .site-item-blue,
+    .site-item-pink {
+        width: 280px;
+        height: 350px;
+    }
+
+    .type,
+    .type-blue,
+    .type-orange {
+        width: 300px;
+    }
+
+    .atr-card {
+        width: 300px;
+    }
+
+    .art-text-1,
+    .art-text-2,
+    .art-text-3 {
+        width: 300px;
+    }
+
+    .preview-atr {
+        width: 300.5px;
+    }
+
+    .small-title {
+        font-size: 32px;
+    }
+
+    .attraction-title,
+    .more-title {
+        font-size: 28px;
+    }
+
+    .type-title {
+        font-size: 22px;
+    }
+
+    .text-type,
+    .text-type-blue,
+    .text-type-orange {
+        font-size: 22px;
+    }
+
+    .buyy-typpe-billet-item-title {
+        font-size: 28px;
+    }
+
+    .buyy-typpe-billet-item-text {
+        font-size: 24px;
+    }
+
+    .payment-btn {
+        font-size: 20px;
+    }
+
+    .log-title {
+        font-size: 32px;
+    }
+
+    .logIn-input,
+    .logIn-input-reg {
+        font-size: 22px;
+    }
+
+    .logInt-btn,
+    .logInt-btn-reg {
+        font-size: 20px;
+    }
+
+    .rating-title {
+        font-size: 32px;
+    }
+
+    .rating-name {
+        font-size: 24px;
+    }
+
+    .diz-title {
+        font-size: 20px;
+    }
+
+    .copyright {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fooon {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .name-park {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .site-item,
+    .site-item-blue,
+    .site-item-pink,
+    .type,
+    .type-blue,
+    .type-orange,
+    .atr-card,
+    .art-text-1,
+    .art-text-2,
+    .art-text-3 {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .preview-atr {
+        width: 100%;
+    }
 }
