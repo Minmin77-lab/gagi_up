@@ -135,7 +135,7 @@ header {
     background: linear-gradient(190deg, rgba(213, 229, 242, 1) 0%, rgba(176, 210, 240, 1) 61%, rgba(150, 206, 255, 1) 100%);
     border-radius: 50px;
     text-align: end;
-    height: 300px;
+    height: auto;
     padding: 50px 20px 40px 20px
 }
 
@@ -716,7 +716,6 @@ footer {
     grid-template-columns: repeat(auto-fill, 401px);
     grid-template-rows: repeat(auto-fill, 380px);
     justify-content: space-evenly;
-
 }
 
 .head-more {
@@ -967,7 +966,7 @@ h5 {
 
 .log-title {
     margin-bottom: 10px;
-    color: #Fff;
+    color: #F58128;
     font-size: 40px;
 }
 
@@ -992,18 +991,18 @@ h5 {
 }
 
 .logIn-input-reg::placeholder {
-    color: #FFF;
+    color: #F58128;
 }
 
 .logIn-input-reg {
     width: 85%;
     height: 100%;
     background: transparent;
-    border: 3px solid #fff;
+    border: 3px solid #F58128;
     outline: none;
     border-radius: 40px;
     font-size: 27px;
-    color: #fff;
+    color: #F58128;
     padding: 20px 45px 20px 20px;
 }
 
@@ -1020,11 +1019,11 @@ h5 {
 
 .logInt-btn-reg {
     padding: 20px 10px;
-    background-color: #fff;
+    background-color: #F58128;
     border: none;
     border-radius: 30px;
     width: 300px;
-    color: #F58128;
+    color: #fff;
     margin: 0 auto;
     font-size: 25px;
 }
@@ -1186,7 +1185,7 @@ h5 {
 
 .oc {
     background: linear-gradient(153deg, #9747ff 13.94%, #c786fb 51.68%, #f7c5f8 89.42%);
-    width: 900px;
+    max-width: auto;
     height: 430px;
     margin: 0 auto;
     padding: 20px;
@@ -1285,30 +1284,6 @@ h5 {
     padding: 0;
 }
 
-main {
-    margin-top: 150px;
-}
-
-@media (max-width: 768px) {
-    main {
-        margin-top: 100px;
-    }
-
-    .fooon {
-        height: 100px;
-        object-fit: cover;
-    }
-}
-
-@media (max-width: 480px) {
-    main {
-        margin-top: 80px;
-    }
-
-    .fooon {
-        height: 80px;
-    }
-}
 
 @media (max-width: 1600px) {
     .container {
@@ -1337,7 +1312,6 @@ main {
 @media (max-width: 1200px) {
     .container {
         width: 95%;
-        padding: 0 15px;
     }
 
     .header-inner {
@@ -1456,10 +1430,11 @@ main {
         cursor: pointer;
         transition: all 0.3s;
         position: static;
-        margin-top: 220% ;
+        margin-top: 220%;
     }
 
-    .small-img, .small-text {
+    .small-img,
+    .small-text {
         width: 100%;
     }
 
@@ -1474,10 +1449,37 @@ main {
     }
 }
 
+@media (max-width: 1024px) {
+
+    .img-buy {
+        width: 35px;
+    }
+
+    .name-park {
+        margin-top: 50px;
+    }
+
+    .logo {
+        width: 70px;
+    }
+
+    .buttn {
+        font-size: 27px;
+    }
+
+    .menu-link {
+        font-size: 20px;
+    }
+}
+
 @media (max-width: 992px) {
     .menu-list {
         font-size: 20px;
         gap: 30px;
+    }
+
+    .main {
+        margin-top: 0;
     }
 
     .name {
@@ -1494,9 +1496,6 @@ main {
         text-align: center;
     }
 
-    .name-park {
-        margin-top: 150px;
-    }
 
     .text-fonts {
         width: 90%;
@@ -1574,6 +1573,19 @@ main {
         max-width: 400px;
     }
 
+    .atr-card {
+        height: auto;
+    }
+
+    .atr {
+        padding-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 401px);
+        grid-template-rows: repeat(auto-fill, 358px);
+        justify-content: space-evenly;
+        gap: 40px;
+    }
+
 
     .text-area-btn {
         position: static;
@@ -1594,6 +1606,15 @@ main {
         margin: 20px 0;
     }
 
+    main {
+        margin-top: 100px;
+    }
+
+    .fooon {
+        height: 100px;
+        object-fit: cover;
+    }
+
     .buy {
         justify-content: center;
     }
@@ -1608,7 +1629,8 @@ main {
         border-top-right-radius: 90px;
     }
 
-    .site-imgg, .site-img{
+    .site-imgg,
+    .site-img {
         height: 230px;
     }
 
@@ -1708,8 +1730,38 @@ main {
         align-items: flex-start;
     }
 
+    .atr-card {
+        height: auto;
+    }
+
+    .atr {
+        padding-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 350px);
+        grid-template-rows: repeat(auto-fill, 324px);
+        justify-content: space-evenly;
+        gap: 40px;
+    }
+
     .text-area {
         flex-direction: column;
+        width: auto;
+    }
+
+    .oc {
+        width: auto;
+    }
+
+    .star-rating-area {
+        margin: 0 auto;
+    }
+
+    .text-area-btn {
+        margin: 0 auto;
+    }
+
+    .cartinka {
+        display: flex;
     }
 
     .list-site {
@@ -1719,6 +1771,16 @@ main {
     .footer-item {
         display: inline;
     }
+
+    .fooon {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .name-park {
+        margin-top: 100px;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -1753,6 +1815,10 @@ main {
 
     .text-fonts {
         font-size: 18px;
+    }
+
+    .star-icon {
+        width: 100%;
     }
 
     .btn {
@@ -1797,6 +1863,14 @@ main {
 
     .preview-atr {
         width: 300.5px;
+    }
+
+    main {
+        margin-top: 80px;
+    }
+
+    .fooon {
+        height: 80px;
     }
 
     .small-title {
@@ -1852,6 +1926,10 @@ main {
         font-size: 24px;
     }
 
+    .type-title {
+        min-width: 200px;
+    }
+
     .diz-title {
         font-size: 20px;
     }
@@ -1861,16 +1939,6 @@ main {
     }
 }
 
-@media (max-width: 768px) {
-    .fooon {
-        height: 200px;
-        object-fit: cover;
-    }
-
-    .name-park {
-        margin-top: 100px;
-    }
-}
 
 @media (max-width: 360px) {
 
@@ -1888,7 +1956,39 @@ main {
         max-width: 280px;
     }
 
+    .site-img {
+        width: 250px;
+        left: 30px;
+    }
+
+    .site-imgg {
+        height: 220px;
+        top: 52px;
+    }
+
+    .atr-card {
+        height: 279px;
+    }
+
+    .atraction-link-img {
+        width: 45px;
+    }
+
+    .atr {
+        padding-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 279px);
+        grid-template-rows: repeat(auto-fill, 300px);
+        justify-content: space-evenly;
+    }
+
+    .rating-title {
+        font-size: 30px;
+    }
+
     .preview-atr {
         width: 100%;
     }
+
+
 }
